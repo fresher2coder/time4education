@@ -1,0 +1,59 @@
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+pnpm-lock.yaml
+
+# Logs
+logs
+*.log
+log.txt
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Build / Coverage
+dist/
+build/
+.cache/
+coverage/
+.next/
+out/
+
+# Environment variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Editor directories and files
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# React specific
+*.env.local
+.eslintcache
+
+# MongoDB
+*.mongodb
+dump/
+
+# Others
+*.tgz
+*.zip
+*.tar.gz
