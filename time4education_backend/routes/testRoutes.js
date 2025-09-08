@@ -155,28 +155,22 @@ router.get("/:id", authMiddleware, async (req, res) => {
  * ✅ Update Test (Admin only)
  */
 
+/**
+ * ✅ Update Test (Admin only)
+ */
 router.put(
   "/:id",
   authMiddleware,
   roleMiddleware("admin"),
   async (req, res) => {
     try {
-      const { startTime, endTime, ...rest } = req.body;
+      const { startTime, endTime, questions, ...rest } = req.body;
 
-      // Normalize to UTC before updating
       let updatePayload = { ...rest };
 
-      if (startTime) {
-        // If frontend sends ISO in local timezone, convert explicitly
-        updatePayload.startTime = new Date(startTime);
-        // or with timezone awareness:
-        // updatePayload.startTime = DateTime.fromISO(startTime, { zone: "Asia/Kolkata" }).toUTC().toJSDate();
-      }
-      if (endTime) {
-        updatePayload.endTime = new Date(endTime);
-        // or:
-        // updatePayload.endTime = DateTime.fromISO(endTime, { zone: "Asia/Kolkata" }).toUTC().toJSDate();
-      }
+      if (startTime) updatePayload.startTime = new Date(startTime);
+      if (endTime) updatePayload.endTime = new Date(endTime);
+      if (questions) updatePayload.questions = questions;
 
       const updatedTest = await Test.findByIdAndUpdate(
         req.params.id,
@@ -190,8 +184,11 @@ router.put(
           .json({ success: false, message: "Test not found" });
       }
 
-      // 🧮 If needed: recalc maxMarks (optional if you compute elsewhere)
-      await recalcMaxMarks(updatedTest._id);
+      // 🧮 Recalculate maxMarks if questions were updated
+      if (questions) {
+        const maxMarks = await recalcMaxMarks(updatedTest._id);
+        updatedTest.maxMarks = maxMarks;
+      }
 
       res.json({
         success: true,

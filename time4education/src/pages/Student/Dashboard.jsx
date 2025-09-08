@@ -1,113 +1,203 @@
 import React, { useEffect, useState } from "react";
 import axios from "@/api/axios";
-import { useParams } from "react-router-dom";
-import { Card, CardContent } from "@/components/ui/card";
 import {
-  PieChart,
-  Pie,
-  Cell,
+  RadialBarChart,
+  RadialBar,
   Tooltip,
+  ResponsiveContainer,
   BarChart,
   Bar,
   XAxis,
   YAxis,
   CartesianGrid,
 } from "recharts";
+import { motion } from "framer-motion";
 
-const COLORS = ["#4caf50", "#f44336", "#ff9800", "#9e9e9e"];
+const statusColors = {
+  completed: "#22c55e",
+  "in-progress": "#facc15",
+  "not-started": "#9ca3af",
+};
 
-export default function StudentAnalysis() {
-  const { assignmentId } = useParams();
-  const [analysis, setAnalysis] = useState(null);
+const StudentDashboard = () => {
+  const [assignments, setAssignments] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [errorMsg, setErrorMsg] = useState("");
 
   useEffect(() => {
-    const fetchAnalysis = async () => {
+    const fetchDashboard = async () => {
       try {
-        const res = await axios.get(`/submissions/analysis/${assignmentId}`, {
-          withCredentials: true,
-        });
-        setAnalysis(res.data);
+        const res = await axios.get("/dashboard/student/me");
+        setAssignments(res.data.assignments || []);
       } catch (err) {
-        console.error("Error fetching analysis:", err);
+        setErrorMsg(err.response?.data?.message || "Error fetching dashboard");
+      } finally {
+        setLoading(false);
       }
     };
-    fetchAnalysis();
-  }, [assignmentId]);
+    fetchDashboard();
+  }, []);
 
-  if (!analysis) {
+  if (loading)
     return (
-      <div className="p-6 text-center text-gray-500">Loading analysis…</div>
+      <div className="flex justify-center items-center h-64 text-gray-500">
+        Loading dashboard...
+      </div>
     );
-  }
 
-  const summaryData = [
-    { name: "Correct", value: analysis.correct },
-    { name: "Incorrect", value: analysis.incorrect },
-    { name: "Unattempted", value: analysis.unattempted },
-  ];
+  if (errorMsg)
+    return (
+      <div className="flex justify-center items-center h-64 text-red-600">
+        {errorMsg}
+      </div>
+    );
 
-  const topicData = Object.entries(analysis.topicStats).map(
-    ([topic, stats]) => ({
-      topic,
-      correct: stats.correct,
-      total: stats.total,
-    })
-  );
+  if (assignments.length === 0)
+    return (
+      <div className="flex justify-center items-center h-64 text-gray-500">
+        No assignments available yet.
+      </div>
+    );
+
+  // Top 5 assignments for chart
+  const top5Assignments = assignments.slice(0, 5);
+  const chartData = top5Assignments.map((a) => ({
+    name: a.title || "Untitled",
+    Progress: a.progressPercentage || 0,
+    Score: a.score ?? 0,
+  }));
 
   return (
-    <div className="p-6 max-w-4xl mx-auto space-y-6">
-      <h1 className="text-2xl font-bold text-blue-700">
-        Analysis: {analysis.testTitle}
-      </h1>
-      <p className="text-gray-500 text-sm">
-        Submitted at: {new Date(analysis.submittedAt).toLocaleString()}
-      </p>
+    <div className="max-w-7xl mx-auto p-6 space-y-8">
+      {/* 🔹 Assignment Cards */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {assignments.map((a, index) => (
+          <motion.div
+            key={a.testId}
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.5, delay: index * 0.1 }}
+            className="bg-white shadow-xl rounded-2xl p-5 flex flex-col justify-between hover:shadow-2xl transition-shadow duration-300"
+          >
+            {/* Title & Description */}
+            <div className="mb-4">
+              <h2 className="text-lg font-bold text-gray-900">{a.title}</h2>
+              <p className="text-gray-500 text-sm">{a.description}</p>
+            </div>
 
-      <Card>
-        <CardContent className="flex flex-col md:flex-row items-center justify-around">
-          <PieChart width={250} height={250}>
-            <Pie
-              data={summaryData}
-              cx="50%"
-              cy="50%"
-              label
-              outerRadius={80}
-              fill="#8884d8"
-              dataKey="value"
+            {/* Status & Radial Progress */}
+            <div className="flex items-center justify-between mb-4">
+              <div>
+                <p className="text-gray-500 text-sm">Status:</p>
+                <p
+                  className={`font-semibold capitalize ${
+                    a.status === "completed"
+                      ? "text-green-600"
+                      : a.status === "in-progress"
+                        ? "text-yellow-600"
+                        : "text-gray-400"
+                  }`}
+                >
+                  {a.status}
+                </p>
+              </div>
+              <div className="w-20 h-20">
+                <ResponsiveContainer width="100%" height="100%">
+                  <RadialBarChart
+                    innerRadius="70%"
+                    outerRadius="100%"
+                    data={[
+                      {
+                        name: "progress",
+                        value:
+                          a.progressPercentage !== null
+                            ? a.progressPercentage
+                            : a.status === "completed"
+                              ? 100
+                              : 0,
+                        fill: statusColors[a.status],
+                      },
+                    ]}
+                    startAngle={90}
+                    endAngle={-270}
+                  >
+                    <RadialBar
+                      minAngle={15}
+                      background
+                      clockWise
+                      dataKey="value"
+                    />
+                    <Tooltip
+                      formatter={(value) => `${Math.round(value)}%`}
+                      cursor={{ fill: "transparent" }}
+                    />
+                  </RadialBarChart>
+                </ResponsiveContainer>
+              </div>
+            </div>
+
+            {/* Duration & Dates */}
+            <div className="border-t pt-3 text-sm text-gray-500 flex flex-col gap-1">
+              <div className="flex justify-between">
+                <span>Duration:</span>
+                <span>{a.duration} mins</span>
+              </div>
+              <div className="flex justify-between">
+                <span>Start:</span>
+                <span>{new Date(a.startTime).toLocaleString()}</span>
+              </div>
+              <div className="flex justify-between">
+                <span>End:</span>
+                <span>{new Date(a.endTime).toLocaleString()}</span>
+              </div>
+              <div className="flex justify-between font-semibold">
+                <span>Score:</span>
+                <span>
+                  {a.score ?? 0}/{a.maxScore}
+                </span>
+              </div>
+            </div>
+
+            {/* Action Button */}
+            {a.canStart && (
+              <button className="mt-4 bg-sky-600 text-white py-2 rounded-xl hover:bg-sky-700 transition-colors">
+                Start Test
+              </button>
+            )}
+          </motion.div>
+        ))}
+      </div>
+      {/* 🔹 Top 5 Bar Chart */}
+      {top5Assignments.length > 0 && (
+        <div className="bg-white shadow-lg rounded-2xl p-6">
+          <h2 className="text-lg font-bold text-gray-900 mb-4">
+            Top 5 Assignments Overview
+          </h2>
+          <ResponsiveContainer width="100%" height={250}>
+            <BarChart
+              data={chartData}
+              margin={{ top: 5, right: 20, bottom: 20, left: 0 }}
             >
-              {summaryData.map((entry, index) => (
-                <Cell
-                  key={`cell-${index}`}
-                  fill={COLORS[index % COLORS.length]}
-                />
-              ))}
-            </Pie>
-            <Tooltip />
-          </PieChart>
-          <div className="mt-4 md:mt-0">
-            <ul className="space-y-2 text-gray-700">
-              <li>✅ Correct: {analysis.correct}</li>
-              <li>❌ Incorrect: {analysis.incorrect}</li>
-              <li>🕗 Unattempted: {analysis.unattempted}</li>
-              <li>📋 Total Questions: {analysis.total}</li>
-            </ul>
-          </div>
-        </CardContent>
-      </Card>
-
-      <Card>
-        <CardContent>
-          <h2 className="text-xl font-semibold mb-4">Topic-wise Performance</h2>
-          <BarChart width={500} height={300} data={topicData}>
-            <CartesianGrid strokeDasharray="3 3" />
-            <XAxis dataKey="topic" />
-            <YAxis />
-            <Tooltip />
-            <Bar dataKey="correct" fill="#4caf50" name="Correct" />
-            <Bar dataKey="total" fill="#9e9e9e" name="Total" />
-          </BarChart>
-        </CardContent>
-      </Card>
+              <CartesianGrid strokeDasharray="3 3" />
+              <XAxis
+                dataKey="name"
+                tick={{ fontSize: 12 }}
+                interval={0}
+                angle={-20}
+                textAnchor="end"
+                height={60}
+              />
+              <YAxis />
+              <Tooltip />
+              <Bar dataKey="Progress" fill="#facc15" barSize={20} />
+              <Bar dataKey="Score" fill="#22c55e" barSize={20} />
+            </BarChart>
+          </ResponsiveContainer>
+        </div>
+      )}
     </div>
   );
-}
+};
+
+export default StudentDashboard;

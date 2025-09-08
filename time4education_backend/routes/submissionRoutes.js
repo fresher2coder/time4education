@@ -44,7 +44,7 @@ router.post(
       const questions = await Question.aggregate([
         {
           $match: {
-            tests: assignment.test._id.toString(),
+            tests: assignment.test._id,
           },
         },
 
@@ -100,7 +100,8 @@ router.post(
         percentage,
       });
 
-      // await submission.save();
+      await submission.save();
+      // console.log(submission);
 
       res.status(201).json({
         message: "✅ Test submitted successfully",
@@ -282,66 +283,5 @@ router.get("/student/history/:studentId", authMiddleware, async (req, res) => {
     });
   }
 });
-
-router.get(
-  "/analysis/:assignmentId",
-  authMiddleware,
-  roleMiddleware("student"),
-  async (req, res) => {
-    try {
-      const { assignmentId } = req.params;
-
-      const submission = await Submission.findOne({
-        assignment: assignmentId,
-        student: req.user.id,
-      })
-        .populate("test", "title description duration")
-        .populate({
-          path: "answers.question",
-          select: "topic difficulty", // or other metadata you want
-        });
-
-      if (!submission) {
-        return res.status(404).json({ message: "❌ No submission found" });
-      }
-
-      // Build analysis data
-      const total = submission.answers.length;
-      const attempted = submission.answers.filter(
-        (a) => a.selectedOptions.length > 0
-      ).length;
-      const correct = submission.answers.filter((a) => a.isCorrect).length;
-      const incorrect = attempted - correct;
-      const unattempted = total - attempted;
-
-      const topicStats = {};
-      submission.answers.forEach((ans) => {
-        const topic = ans.question?.topic || "General";
-        if (!topicStats[topic]) {
-          topicStats[topic] = { total: 0, correct: 0 };
-        }
-        topicStats[topic].total++;
-        if (ans.isCorrect) topicStats[topic].correct++;
-      });
-
-      res.json({
-        testTitle: submission.test.title,
-        submittedAt: submission.submittedAt,
-        total,
-        attempted,
-        correct,
-        incorrect,
-        unattempted,
-        topicStats,
-      });
-    } catch (error) {
-      console.error("❌ Error building analysis:", error);
-      res.status(500).json({
-        message: "❌ Error building analysis",
-        error: error.message,
-      });
-    }
-  }
-);
 
 export default router;

@@ -59,5 +59,8 @@ app.use("/api/assignments", assignmentRoutes);
 import submissionRoutes from "./routes/submissionRoutes.js";
 app.use("/api/submissions", submissionRoutes);
 
+import dashboardRoutes from "./routes/dashboardRoutes.js";
+app.use("/api/dashboard", dashboardRoutes);
+
 const PORT = process.env.PORT || 5050;
 app.listen(PORT, () => console.log(`🔥 Server running on ${PORT}`));

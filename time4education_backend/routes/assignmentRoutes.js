@@ -80,7 +80,7 @@ router.get("/:id", authMiddleware, async (req, res) => {
     const assignment = await Assignment.findById(req.params.id)
       .populate(
         "test",
-        "title description duration startTime endTime status maxMarks"
+        "title description duration startTime endTime status maxMarks noOfQuestions"
       )
       .lean();
 
@@ -109,8 +109,8 @@ router.get("/:id", authMiddleware, async (req, res) => {
 
     // First time → sample 20 random questions
     const questions = await Question.aggregate([
-      { $match: { tests: assignment.test._id.toString() } },
-      { $sample: { size: 20 } },
+      { $match: { tests: assignment.test._id } },
+      { $sample: { size: assignment.test.noOfQuestions } },
       {
         $project: {
           type: 1,

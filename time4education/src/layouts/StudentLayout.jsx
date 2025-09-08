@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Outlet, useLocation } from "react-router-dom";
 import Sidebar from "./Sidebar";
 import Topbar from "./Topbar";
-import { useFullscreen } from "../context/FullscreenContext";
+import { useFullscreen } from "@/context/FullscreenContext";
 
 const StudentLayout = () => {
   const [open, setOpen] = useState(false);
@@ -41,7 +41,7 @@ const StudentLayout = () => {
             fixed top-0 left-0 z-30 h-screen w-64 bg-white shadow-lg
             transform transition-transform duration-300
             ${open ? "translate-x-0" : "-translate-x-full"}
-            lg:static lg:translate-x-0 lg:shadow-none lg:transform-none
+            lg:translate-x-0 
           `}
         >
           <Sidebar closeDrawer={close} />
@@ -49,7 +49,7 @@ const StudentLayout = () => {
       )}
 
       {/* Main area */}
-      <div className="flex-1 flex flex-col">
+      <div className="flex-1 flex flex-col lg:ml-64">
         {!hideSidebar && <Topbar toggleDrawer={toggle} />}
         <main className="flex-1 overflow-auto p-6">
           <Outlet />

@@ -17,6 +17,7 @@ const testSchema = new mongoose.Schema({
 
   // ✅ New: Precomputed total marks for this test
   maxMarks: { type: Number, default: 0 }, // total marks from all linked questions
+  noOfQuestions: { type: Number, default: 0 },
 
   // ✅ Active / Inactive / Archived
   status: {
