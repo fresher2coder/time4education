@@ -18,7 +18,7 @@ app.use(cookieParser());
 // Allow multiple frontend URLs (dev + production)
 const allowedOrigins = [
   "http://localhost:5173", // local dev
-  "https://your-frontend.vercel.app", // production frontend
+  "https://time4education.vercel.app/", // production frontend
 ];
 
 app.use(
