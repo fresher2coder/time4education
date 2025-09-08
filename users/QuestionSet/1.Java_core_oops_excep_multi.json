@@ -1,0 +1,4324 @@
+[{
+  "_id": {
+    "$oid": "68b811058f8d7389e5e59d90"
+  },
+  "tests": [
+    "68b80c368f8d7389e5e59d87"
+  ],
+  "type": "mcq",
+  "questionText": "What is the default value of a local variable in Java?",
+  "options": [
+    "0",
+    "null",
+    "depends on type",
+    "no default value"
+  ],
+  "correctAnswer": "no default value",
+  "explanation": "Local variables in Java do not have a default value and must be initialized before use.",
+  "category": "Java Core",
+  "difficulty": "easy",
+  "marks": 1,
+  "isActive": true,
+  "createdBy": "68b7ffa025ccbc2f7af20c49"
+},
+{
+  "_id": {
+    "$oid": "68b811058f8d7389e5e59d92"
+  },
+  "tests": [
+    "68b80c368f8d7389e5e59d87"
+  ],
+  "type": "mcq",
+  "questionText": "Which class is the superclass of all classes in Java?",
+  "options": [
+    "Base",
+    "Object",
+    "Class",
+    "Root"
+  ],
+  "correctAnswer": "Object",
+  "explanation": "Every Java class implicitly extends the Object class.",
+  "category": "Java Core",
+  "difficulty": "easy",
+  "marks": 1,
+  "isActive": true,
+  "createdBy": "68b7ffa025ccbc2f7af20c49"
+},
+{
+  "_id": {
+    "$oid": "68b811058f8d7389e5e59d95"
+  },
+  "tests": [
+    "68b80c368f8d7389e5e59d87"
+  ],
+  "type": "mcq",
+  "questionText": "Which of these access modifiers makes a member accessible only within its class?",
+  "options": [
+    "protected",
+    "private",
+    "public",
+    "default"
+  ],
+  "correctAnswer": "private",
+  "explanation": "The private access modifier restricts member access to only within its class.",
+  "category": "Java Core",
+  "difficulty": "easy",
+  "marks": 1,
+  "isActive": true,
+  "createdBy": "68b7ffa025ccbc2f7af20c49"
+},
+{
+  "_id": {
+    "$oid": "68b811058f8d7389e5e59d8c"
+  },
+  "tests": [
+    "68b80c368f8d7389e5e59d87"
+  ],
+  "type": "mcq",
+  "questionText": "Which keyword is used to define a subclass in Java?",
+  "options": [
+    "extends",
+    "implements",
+    "inherits",
+    "subclass"
+  ],
+  "correctAnswer": "extends",
+  "explanation": "The 'extends' keyword is used in Java to define a class that inherits from another class.",
+  "category": "OOP",
+  "difficulty": "easy",
+  "marks": 1,
+  "isActive": true,
+  "createdBy": "68b7ffa025ccbc2f7af20c49"
+},
+{
+  "_id": {
+    "$oid": "68b811058f8d7389e5e59d8f"
+  },
+  "tests": [
+    "68b80c368f8d7389e5e59d87"
+  ],
+  "type": "mcq",
+  "questionText": "Which keyword prevents inheritance in Java?",
+  "options": [
+    "static",
+    "final",
+    "private",
+    "sealed"
+  ],
+  "correctAnswer": "final",
+  "explanation": "The 'final' keyword can be used on classes to prevent them from being subclassed.",
+  "category": "OOP",
+  "difficulty": "medium",
+  "marks": 1,
+  "isActive": true,
+  "createdBy": "68b7ffa025ccbc2f7af20c49"
+},
+{
+  "_id": {
+    "$oid": "68b811058f8d7389e5e59d91"
+  },
+  "tests": [
+    "68b80c368f8d7389e5e59d87"
+  ],
+  "type": "mcq",
+  "questionText": "Which principle of OOP means using the same method name but different parameters?",
+  "options": [
+    "Inheritance",
+    "Polymorphism",
+    "Encapsulation",
+    "Abstraction"
+  ],
+  "correctAnswer": "Polymorphism",
+  "explanation": "Polymorphism in Java allows methods to share names but differ by parameter types (method overloading).",
+  "category": "OOP",
+  "difficulty": "medium",
+  "marks": 1,
+  "isActive": true,
+  "createdBy": "68b7ffa025ccbc2f7af20c49"
+},
+{
+  "_id": {
+    "$oid": "68b811058f8d7389e5e59d94"
+  },
+  "tests": [
+    "68b80c368f8d7389e5e59d87"
+  ],
+  "type": "mcq",
+  "questionText": "Which exception is thrown when dividing by zero in Java?",
+  "options": [
+    "IOException",
+    "NumberFormatException",
+    "ArithmeticException",
+    "IllegalArgumentException"
+  ],
+  "correctAnswer": "ArithmeticException",
+  "explanation": "Dividing by zero in Java results in an ArithmeticException at runtime.",
+  "category": "Exception Handling",
+  "difficulty": "easy",
+  "marks": 1,
+  "isActive": true,
+  "createdBy": "68b7ffa025ccbc2f7af20c49"
+},
+{
+  "_id": {
+    "$oid": "68b811058f8d7389e5e59d8d"
+  },
+  "tests": [
+    "68b80c368f8d7389e5e59d87"
+  ],
+  "type": "mcq",
+  "questionText": "Which method is called when an object is created in Java?",
+  "options": [
+    "create()",
+    "init()",
+    "constructor",
+    "start()"
+  ],
+  "correctAnswer": "constructor",
+  "explanation": "A constructor is called when a new object is created in Java.",
+  "category": "Java Core",
+  "difficulty": "easy",
+  "marks": 1,
+  "isActive": true,
+  "createdBy": "68b7ffa025ccbc2f7af20c49"
+},
+{
+  "_id": {
+    "$oid": "68b811058f8d7389e5e59d8e"
+  },
+  "tests": [
+    "68b80c368f8d7389e5e59d87"
+  ],
+  "type": "mcq",
+  "questionText": "Which of the following is a checked exception?",
+  "options": [
+    "NullPointerException",
+    "IOException",
+    "ArithmeticException",
+    "ArrayIndexOutOfBoundsException"
+  ],
+  "correctAnswer": "IOException",
+  "explanation": "IOException is a checked exception, while the others are runtime exceptions.",
+  "category": "Exception Handling",
+  "difficulty": "medium",
+  "marks": 1,
+  "isActive": true,
+  "createdBy": "68b7ffa025ccbc2f7af20c49"
+},
+{
+  "_id": {
+    "$oid": "68b811058f8d7389e5e59d93"
+  },
+  "tests": [
+    "68b80c368f8d7389e5e59d87"
+  ],
+  "type": "mcq",
+  "questionText": "What happens if a constructor has a return type in Java?",
+  "options": [
+    "It becomes a method",
+    "Compilation error",
+    "It still acts as constructor",
+    "Runtime error"
+  ],
+  "correctAnswer": "It becomes a method",
+  "explanation": "If you add a return type to a constructor, it is no longer treated as a constructor but as a normal method.",
+  "category": "Java Core",
+  "difficulty": "medium",
+  "marks": 1,
+  "isActive": true,
+  "createdBy": "68b7ffa025ccbc2f7af20c49"
+},
+{
+  "_id": {
+    "$oid": "68b811318f8d7389e5e59d98"
+  },
+  "tests": [
+    "68b80c368f8d7389e5e59d87"
+  ],
+  "type": "mcq",
+  "questionText": "Which block is always executed regardless of exception occurrence?",
+  "options": [
+    "try",
+    "catch",
+    "throw",
+    "finally"
+  ],
+  "correctAnswer": "finally",
+  "explanation": "The finally block is executed after try/catch, regardless of whether an exception is thrown.",
+  "category": "Exception Handling",
+  "difficulty": "easy",
+  "marks": 1,
+  "isActive": true,
+  "createdBy": "68b7ffa025ccbc2f7af20c49"
+},
+{
+  "_id": {
+    "$oid": "68b811318f8d7389e5e59da2"
+  },
+  "tests": [
+    "68b80c368f8d7389e5e59d87"
+  ],
+  "type": "mcq",
+  "questionText": "What is the default access modifier for a class in Java?",
+  "options": [
+    "public",
+    "protected",
+    "default",
+    "private"
+  ],
+  "correctAnswer": "default",
+  "explanation": "If no access modifier is specified for a class, it has default (package-private) access.",
+  "category": "Java Core",
+  "difficulty": "easy",
+  "marks": 1,
+  "isActive": true,
+  "createdBy": "68b7ffa025ccbc2f7af20c49"
+},
+{
+  "_id": {
+    "$oid": "68b811318f8d7389e5e59da3"
+  },
+  "tests": [
+    "68b80c368f8d7389e5e59d87"
+  ],
+  "type": "mcq",
+  "questionText": "Which keyword is used to inherit an interface?",
+  "options": [
+    "extends",
+    "implements",
+    "inherits",
+    "interface"
+  ],
+  "correctAnswer": "implements",
+  "explanation": "The 'implements' keyword is used to inherit from an interface.",
+  "category": "OOP",
+  "difficulty": "easy",
+  "marks": 1,
+  "isActive": true,
+  "createdBy": "68b7ffa025ccbc2f7af20c49"
+},
+{
+  "_id": {
+    "$oid": "68b811318f8d7389e5e59d97"
+  },
+  "tests": [
+    "68b80c368f8d7389e5e59d87"
+  ],
+  "type": "mcq",
+  "questionText": "Which interface is implemented to create a thread in Java?",
+  "options": [
+    "Runnable",
+    "Serializable",
+    "Cloneable",
+    "Comparable"
+  ],
+  "correctAnswer": "Runnable",
+  "explanation": "The Runnable interface is implemented by classes whose instances are intended to be executed by a thread.",
+  "category": "Java Core",
+  "difficulty": "medium",
+  "marks": 1,
+  "isActive": true,
+  "createdBy": "68b7ffa025ccbc2f7af20c49"
+},
+{
+  "_id": {
+    "$oid": "68b811318f8d7389e5e59d99"
+  },
+  "tests": [
+    "68b80c368f8d7389e5e59d87"
+  ],
+  "type": "mcq",
+  "questionText": "Which feature allows a class to have multiple methods with the same name?",
+  "options": [
+    "Method Overriding",
+    "Method Overloading",
+    "Encapsulation",
+    "Abstraction"
+  ],
+  "correctAnswer": "Method Overloading",
+  "explanation": "Method overloading allows multiple methods with the same name but different parameter lists.",
+  "category": "OOP",
+  "difficulty": "easy",
+  "marks": 1,
+  "isActive": true,
+  "createdBy": "68b7ffa025ccbc2f7af20c49"
+},
+{
+  "_id": {
+    "$oid": "68b811318f8d7389e5e59d9b"
+  },
+  "tests": [
+    "68b80c368f8d7389e5e59d87"
+  ],
+  "type": "mcq",
+  "questionText": "Which keyword is used to call the parent class constructor?",
+  "options": [
+    "this",
+    "super",
+    "parent",
+    "base"
+  ],
+  "correctAnswer": "super",
+  "explanation": "The 'super' keyword is used to call the parent class constructor.",
+  "category": "OOP",
+  "difficulty": "easy",
+  "marks": 1,
+  "isActive": true,
+  "createdBy": "68b7ffa025ccbc2f7af20c49"
+},
+{
+  "_id": {
+    "$oid": "68b811318f8d7389e5e59d9f"
+  },
+  "tests": [
+    "68b80c368f8d7389e5e59d87"
+  ],
+  "type": "mcq",
+  "questionText": "What is it called when a subclass provides a specific implementation of a method already defined in its superclass?",
+  "options": [
+    "Overloading",
+    "Overriding",
+    "Hiding",
+    "Shadowing"
+  ],
+  "correctAnswer": "Overriding",
+  "explanation": "Overriding occurs when a subclass provides its own implementation of a method from its superclass.",
+  "category": "OOP",
+  "difficulty": "medium",
+  "marks": 1,
+  "isActive": true,
+  "createdBy": "68b7ffa025ccbc2f7af20c49"
+},
+{
+  "_id": {
+    "$oid": "68b811318f8d7389e5e59da1"
+  },
+  "tests": [
+    "68b80c368f8d7389e5e59d87"
+  ],
+  "type": "mcq",
+  "questionText": "Which keyword is used to explicitly throw an exception?",
+  "options": [
+    "throw",
+    "throws",
+    "raise",
+    "error"
+  ],
+  "correctAnswer": "throw",
+  "explanation": "The 'throw' keyword is used to explicitly throw an exception.",
+  "category": "Exception Handling",
+  "difficulty": "easy",
+  "marks": 1,
+  "isActive": true,
+  "createdBy": "68b7ffa025ccbc2f7af20c49"
+},
+{
+  "_id": {
+    "$oid": "68b811318f8d7389e5e59d9c"
+  },
+  "tests": [
+    "68b80c368f8d7389e5e59d87"
+  ],
+  "type": "mcq",
+  "questionText": "Which of these cannot be declared static?",
+  "options": [
+    "Variables",
+    "Methods",
+    "Inner classes",
+    "Constructors"
+  ],
+  "correctAnswer": "Constructors",
+  "explanation": "Constructors cannot be declared static in Java.",
+  "category": "Java Core",
+  "difficulty": "easy",
+  "marks": 1,
+  "isActive": true,
+  "createdBy": "68b7ffa025ccbc2f7af20c49"
+},
+{
+  "_id": {
+    "$oid": "68b811318f8d7389e5e59d9e"
+  },
+  "tests": [
+    "68b80c368f8d7389e5e59d87"
+  ],
+  "type": "mcq",
+  "questionText": "What is the parent of all exception classes in Java?",
+  "options": [
+    "RuntimeException",
+    "Throwable",
+    "Error",
+    "Exception"
+  ],
+  "correctAnswer": "Throwable",
+  "explanation": "Throwable is the superclass of all errors and exceptions in Java.",
+  "category": "Exception Handling",
+  "difficulty": "easy",
+  "marks": 1,
+  "isActive": true,
+  "createdBy": "68b7ffa025ccbc2f7af20c49"
+},
+{
+  "_id": {
+    "$oid": "68b811318f8d7389e5e59da0"
+  },
+  "tests": [
+    "68b80c368f8d7389e5e59d87"
+  ],
+  "type": "mcq",
+  "questionText": "Which package contains the Random class?",
+  "options": [
+    "java.util",
+    "java.lang",
+    "java.io",
+    "java.math"
+  ],
+  "correctAnswer": "java.util",
+  "explanation": "The Random class is part of java.util package.",
+  "category": "Java Core",
+  "difficulty": "easy",
+  "marks": 1,
+  "isActive": true,
+  "createdBy": "68b7ffa025ccbc2f7af20c49"
+},
+{
+  "_id": {
+    "$oid": "68b811318f8d7389e5e59d9a"
+  },
+  "tests": [
+    "68b80c368f8d7389e5e59d87"
+  ],
+  "type": "mcq",
+  "questionText": "Which operator is used to compare object references in Java?",
+  "options": [
+    "==",
+    "equals()",
+    "compareTo()",
+    "instanceof"
+  ],
+  "correctAnswer": "==",
+  "explanation": "The '==' operator compares object references, while equals() compares content if overridden.",
+  "category": "Java Core",
+  "difficulty": "medium",
+  "marks": 1,
+  "isActive": true,
+  "createdBy": "68b7ffa025ccbc2f7af20c49"
+},
+{
+  "_id": {
+    "$oid": "68b811318f8d7389e5e59d9d"
+  },
+  "tests": [
+    "68b80c368f8d7389e5e59d87"
+  ],
+  "type": "mcq",
+  "questionText": "What happens if no catch block handles a thrown exception?",
+  "options": [
+    "Compilation error",
+    "Program continues",
+    "Program terminates",
+    "Exception ignored"
+  ],
+  "correctAnswer": "Program terminates",
+  "explanation": "If no catch block handles the exception, the program terminates and prints a stack trace.",
+  "category": "Exception Handling",
+  "difficulty": "medium",
+  "marks": 1,
+  "isActive": true,
+  "createdBy": "68b7ffa025ccbc2f7af20c49"
+},
+{
+  "_id": {
+    "$oid": "68b811318f8d7389e5e59da4"
+  },
+  "tests": [
+    "68b80c368f8d7389e5e59d87"
+  ],
+  "type": "mcq",
+  "questionText": "Which class is used to handle input from the console in Java?",
+  "options": [
+    "Scanner",
+    "BufferedReader",
+    "InputStream",
+    "ConsoleReader"
+  ],
+  "correctAnswer": "Scanner",
+  "explanation": "The Scanner class from java.util is commonly used to handle input from the console.",
+  "category": "Java Core",
+  "difficulty": "easy",
+  "marks": 1,
+  "isActive": true,
+  "createdBy": "68b7ffa025ccbc2f7af20c49"
+},
+{
+  "_id": {
+    "$oid": "68b8116b8f8d7389e5e59da6"
+  },
+  "tests": [
+    "68b80c368f8d7389e5e59d87"
+  ],
+  "type": "mcq",
+  "questionText": "Which method is the entry point of a Java program?",
+  "options": [
+    "main()",
+    "start()",
+    "run()",
+    "execute()"
+  ],
+  "correctAnswer": "main()",
+  "explanation": "In Java, the main() method is the entry point of every program.",
+  "category": "Java Core",
+  "difficulty": "easy",
+  "marks": 1,
+  "isActive": true,
+  "createdBy": "68b7ffa025ccbc2f7af20c49"
+},
+{
+  "_id": {
+    "$oid": "68b8116b8f8d7389e5e59da8"
+  },
+  "tests": [
+    "68b80c368f8d7389e5e59d87"
+  ],
+  "type": "mcq",
+  "questionText": "Which concept ensures that the internal representation of an object is hidden?",
+  "options": [
+    "Encapsulation",
+    "Inheritance",
+    "Polymorphism",
+    "Abstraction"
+  ],
+  "correctAnswer": "Encapsulation",
+  "explanation": "Encapsulation hides internal representation and allows controlled access via getters/setters.",
+  "category": "OOP",
+  "difficulty": "easy",
+  "marks": 1,
+  "isActive": true,
+  "createdBy": "68b7ffa025ccbc2f7af20c49"
+},
+{
+  "_id": {
+    "$oid": "68b8116b8f8d7389e5e59db2"
+  },
+  "tests": [
+    "68b80c368f8d7389e5e59d87"
+  ],
+  "type": "mcq",
+  "questionText": "What is the superclass of all classes in Java?",
+  "options": [
+    "Object",
+    "Class",
+    "Base",
+    "Root"
+  ],
+  "correctAnswer": "Object",
+  "explanation": "All classes in Java inherit from Object class by default.",
+  "category": "OOP",
+  "difficulty": "easy",
+  "marks": 1,
+  "isActive": true,
+  "createdBy": "68b7ffa025ccbc2f7af20c49"
+},
+{
+  "_id": {
+    "$oid": "68b8116b8f8d7389e5e59db6"
+  },
+  "tests": [
+    "68b80c368f8d7389e5e59d87"
+  ],
+  "type": "mcq",
+  "questionText": "What is multiple inheritance in Java through classes?",
+  "options": [
+    "Allowed",
+    "Not allowed",
+    "Partially allowed",
+    "Depends on JVM"
+  ],
+  "correctAnswer": "Not allowed",
+  "explanation": "Java does not support multiple inheritance through classes to avoid ambiguity.",
+  "category": "OOP",
+  "difficulty": "medium",
+  "marks": 1,
+  "isActive": true,
+  "createdBy": "68b7ffa025ccbc2f7af20c49"
+},
+{
+  "_id": {
+    "$oid": "68b8116b8f8d7389e5e59db8"
+  },
+  "tests": [
+    "68b80c368f8d7389e5e59d87"
+  ],
+  "type": "mcq",
+  "questionText": "Which exception is thrown when an array is accessed out of bounds?",
+  "options": [
+    "NullPointerException",
+    "IndexOutOfBoundsException",
+    "ArrayIndexOutOfBoundsException",
+    "IllegalArgumentException"
+  ],
+  "correctAnswer": "ArrayIndexOutOfBoundsException",
+  "explanation": "Accessing an array index beyond its size throws ArrayIndexOutOfBoundsException.",
+  "category": "Exception Handling",
+  "difficulty": "easy",
+  "marks": 1,
+  "isActive": true,
+  "createdBy": "68b7ffa025ccbc2f7af20c49"
+},
+{
+  "_id": {
+    "$oid": "68b8116b8f8d7389e5e59da7"
+  },
+  "tests": [
+    "68b80c368f8d7389e5e59d87"
+  ],
+  "type": "mcq",
+  "questionText": "Which of these is a checked exception?",
+  "options": [
+    "IOException",
+    "NullPointerException",
+    "ArithmeticException",
+    "ArrayIndexOutOfBoundsException"
+  ],
+  "correctAnswer": "IOException",
+  "explanation": "Checked exceptions must be declared or handled, IOException is a checked exception.",
+  "category": "Exception Handling",
+  "difficulty": "medium",
+  "marks": 1,
+  "isActive": true,
+  "createdBy": "68b7ffa025ccbc2f7af20c49"
+},
+{
+  "_id": {
+    "$oid": "68b8116b8f8d7389e5e59db0"
+  },
+  "tests": [
+    "68b80c368f8d7389e5e59d87"
+  ],
+  "type": "mcq",
+  "questionText": "Which of these is a runtime exception?",
+  "options": [
+    "SQLException",
+    "IOException",
+    "ClassCastException",
+    "FileNotFoundException"
+  ],
+  "correctAnswer": "ClassCastException",
+  "explanation": "ClassCastException is unchecked (runtime) exception.",
+  "category": "Exception Handling",
+  "difficulty": "medium",
+  "marks": 1,
+  "isActive": true,
+  "createdBy": "68b7ffa025ccbc2f7af20c49"
+},
+{
+  "_id": {
+    "$oid": "68b8116b8f8d7389e5e59da9"
+  },
+  "tests": [
+    "68b80c368f8d7389e5e59d87"
+  ],
+  "type": "mcq",
+  "questionText": "What is the size of an int in Java?",
+  "options": [
+    "8 bits",
+    "16 bits",
+    "32 bits",
+    "64 bits"
+  ],
+  "correctAnswer": "32 bits",
+  "explanation": "In Java, int is a 32-bit signed integer.",
+  "category": "Java Core",
+  "difficulty": "easy",
+  "marks": 1,
+  "isActive": true,
+  "createdBy": "68b7ffa025ccbc2f7af20c49"
+},
+{
+  "_id": {
+    "$oid": "68b8116b8f8d7389e5e59daa"
+  },
+  "tests": [
+    "68b80c368f8d7389e5e59d87"
+  ],
+  "type": "mcq",
+  "questionText": "Which keyword is used to prevent method overriding?",
+  "options": [
+    "final",
+    "static",
+    "abstract",
+    "volatile"
+  ],
+  "correctAnswer": "final",
+  "explanation": "A final method cannot be overridden in subclasses.",
+  "category": "OOP",
+  "difficulty": "medium",
+  "marks": 1,
+  "isActive": true,
+  "createdBy": "68b7ffa025ccbc2f7af20c49"
+},
+{
+  "_id": {
+    "$oid": "68b8116b8f8d7389e5e59db7"
+  },
+  "tests": [
+    "68b80c368f8d7389e5e59d87"
+  ],
+  "type": "mcq",
+  "questionText": "Which method of Object class is used to get runtime class of an object?",
+  "options": [
+    "getClass()",
+    "toString()",
+    "hashCode()",
+    "equals()"
+  ],
+  "correctAnswer": "getClass()",
+  "explanation": "getClass() returns the runtime class of the object.",
+  "category": "Java Core",
+  "difficulty": "medium",
+  "marks": 1,
+  "isActive": true,
+  "createdBy": "68b7ffa025ccbc2f7af20c49"
+},
+{
+  "_id": {
+    "$oid": "68b8116b8f8d7389e5e59db1"
+  },
+  "tests": [
+    "68b80c368f8d7389e5e59d87"
+  ],
+  "type": "mcq",
+  "questionText": "Which access modifier makes a member visible only within the same package?",
+  "options": [
+    "private",
+    "protected",
+    "default",
+    "public"
+  ],
+  "correctAnswer": "default",
+  "explanation": "Default (package-private) allows visibility only within the same package.",
+  "category": "Java Core",
+  "difficulty": "easy",
+  "marks": 1,
+  "isActive": true,
+  "createdBy": "68b7ffa025ccbc2f7af20c49"
+},
+{
+  "_id": {
+    "$oid": "68b8116b8f8d7389e5e59dab"
+  },
+  "tests": [
+    "68b80c368f8d7389e5e59d87"
+  ],
+  "type": "mcq",
+  "questionText": "What happens when dividing an integer by zero in Java?",
+  "options": [
+    "Infinity",
+    "NaN",
+    "ArithmeticException",
+    "0"
+  ],
+  "correctAnswer": "ArithmeticException",
+  "explanation": "Dividing by zero with integers throws ArithmeticException at runtime.",
+  "category": "Exception Handling",
+  "difficulty": "medium",
+  "marks": 1,
+  "isActive": true,
+  "createdBy": "68b7ffa025ccbc2f7af20c49"
+},
+{
+  "_id": {
+    "$oid": "68b8116b8f8d7389e5e59dac"
+  },
+  "tests": [
+    "68b80c368f8d7389e5e59d87"
+  ],
+  "type": "mcq",
+  "questionText": "Which of the following is not a Java primitive type?",
+  "options": [
+    "int",
+    "float",
+    "boolean",
+    "String"
+  ],
+  "correctAnswer": "String",
+  "explanation": "String is a class, not a primitive type in Java.",
+  "category": "Java Core",
+  "difficulty": "easy",
+  "marks": 1,
+  "isActive": true,
+  "createdBy": "68b7ffa025ccbc2f7af20c49"
+},
+{
+  "_id": {
+    "$oid": "68b8116b8f8d7389e5e59dae"
+  },
+  "tests": [
+    "68b80c368f8d7389e5e59d87"
+  ],
+  "type": "mcq",
+  "questionText": "Which statement correctly creates a String in Java?",
+  "options": [
+    "String s = \"hello\";",
+    "String s = new String(\"hello\");",
+    "Both A and B",
+    "None of the above"
+  ],
+  "correctAnswer": "Both A and B",
+  "explanation": "Both literal and new keyword create String objects, but literals go to String pool.",
+  "category": "Java Core",
+  "difficulty": "medium",
+  "marks": 1,
+  "isActive": true,
+  "createdBy": "68b7ffa025ccbc2f7af20c49"
+},
+{
+  "_id": {
+    "$oid": "68b8116b8f8d7389e5e59db3"
+  },
+  "tests": [
+    "68b80c368f8d7389e5e59d87"
+  ],
+  "type": "mcq",
+  "questionText": "Which keyword is used to indicate a method has no implementation?",
+  "options": [
+    "abstract",
+    "native",
+    "void",
+    "static"
+  ],
+  "correctAnswer": "abstract",
+  "explanation": "Abstract methods have no implementation in the declaring class.",
+  "category": "OOP",
+  "difficulty": "medium",
+  "marks": 1,
+  "isActive": true,
+  "createdBy": "68b7ffa025ccbc2f7af20c49"
+},
+{
+  "_id": {
+    "$oid": "68b8116b8f8d7389e5e59db5"
+  },
+  "tests": [
+    "68b80c368f8d7389e5e59d87"
+  ],
+  "type": "mcq",
+  "questionText": "Which keyword is used to define a constant in Java?",
+  "options": [
+    "constant",
+    "static",
+    "final",
+    "immutable"
+  ],
+  "correctAnswer": "final",
+  "explanation": "final variables cannot be reassigned, making them effectively constants.",
+  "category": "Java Core",
+  "difficulty": "easy",
+  "marks": 1,
+  "isActive": true,
+  "createdBy": "68b7ffa025ccbc2f7af20c49"
+},
+{
+  "_id": {
+    "$oid": "68b8116b8f8d7389e5e59dad"
+  },
+  "tests": [
+    "68b80c368f8d7389e5e59d87"
+  ],
+  "type": "mcq",
+  "questionText": "What is it called when an object can take many forms?",
+  "options": [
+    "Abstraction",
+    "Encapsulation",
+    "Polymorphism",
+    "Inheritance"
+  ],
+  "correctAnswer": "Polymorphism",
+  "explanation": "Polymorphism means many forms — method overloading and overriding enable it.",
+  "category": "OOP",
+  "difficulty": "medium",
+  "marks": 1,
+  "isActive": true,
+  "createdBy": "68b7ffa025ccbc2f7af20c49"
+},
+{
+  "_id": {
+    "$oid": "68b8116b8f8d7389e5e59daf"
+  },
+  "tests": [
+    "68b80c368f8d7389e5e59d87"
+  ],
+  "type": "mcq",
+  "questionText": "Which block must immediately follow a try block?",
+  "options": [
+    "catch",
+    "finally",
+    "throw",
+    "none"
+  ],
+  "correctAnswer": "catch",
+  "explanation": "A try block must be followed by either catch or finally, but typically catch is next.",
+  "category": "Exception Handling",
+  "difficulty": "easy",
+  "marks": 1,
+  "isActive": true,
+  "createdBy": "68b7ffa025ccbc2f7af20c49"
+},
+{
+  "_id": {
+    "$oid": "68b8116b8f8d7389e5e59db4"
+  },
+  "tests": [
+    "68b80c368f8d7389e5e59d87"
+  ],
+  "type": "mcq",
+  "questionText": "Which method is used to start a thread in Java?",
+  "options": [
+    "start()",
+    "run()",
+    "init()",
+    "execute()"
+  ],
+  "correctAnswer": "start()",
+  "explanation": "The start() method spawns a new thread and then calls run() internally.",
+  "category": "Java Core",
+  "difficulty": "medium",
+  "marks": 1,
+  "isActive": true,
+  "createdBy": "68b7ffa025ccbc2f7af20c49"
+},
+{
+  "_id": {
+    "$oid": "68b8129b8f8d7389e5e59dc5"
+  },
+  "tests": [
+    "68b80c368f8d7389e5e59d87"
+  ],
+  "type": "mcq",
+  "questionText": "Which of the following keywords is used to handle exceptions?",
+  "options": [
+    "try",
+    "catch",
+    "throw",
+    "All of the above"
+  ],
+  "correctAnswer": "All of the above",
+  "explanation": "try, catch, and throw are used in Java for exception handling.",
+  "category": "Exception Handling",
+  "difficulty": "medium",
+  "marks": 1,
+  "isActive": true,
+  "createdBy": "68b7ffa025ccbc2f7af20c49"
+},
+{
+  "_id": {
+    "$oid": "68b8129b8f8d7389e5e59dc1"
+  },
+  "tests": [
+    "68b80c368f8d7389e5e59d87"
+  ],
+  "type": "mcq",
+  "questionText": "Which of the following are marker interfaces?",
+  "options": [
+    "Serializable",
+    "Cloneable",
+    "Both A and B",
+    "None"
+  ],
+  "correctAnswer": "Both A and B",
+  "explanation": "Serializable and Cloneable are examples of marker interfaces.",
+  "category": "Java Core",
+  "difficulty": "medium",
+  "marks": 1,
+  "isActive": true,
+  "createdBy": "68b7ffa025ccbc2f7af20c49"
+},
+{
+  "_id": {
+    "$oid": "68b8129b8f8d7389e5e59dc8"
+  },
+  "tests": [
+    "68b80c368f8d7389e5e59d87"
+  ],
+  "type": "mcq",
+  "questionText": "Which exception is thrown if sleep() is interrupted?",
+  "options": [
+    "IOException",
+    "InterruptedException",
+    "SleepException",
+    "TimeoutException"
+  ],
+  "correctAnswer": "InterruptedException",
+  "explanation": "Thread.sleep() throws InterruptedException if another thread interrupts it.",
+  "category": "Exception Handling",
+  "difficulty": "medium",
+  "marks": 1,
+  "isActive": true,
+  "createdBy": "68b7ffa025ccbc2f7af20c49"
+},
+{
+  "_id": {
+    "$oid": "68b8129b8f8d7389e5e59dbf"
+  },
+  "tests": [
+    "68b80c368f8d7389e5e59d87"
+  ],
+  "type": "mcq",
+  "questionText": "What does JVM stand for?",
+  "options": [
+    "Java Virtual Machine",
+    "Java Variable Method",
+    "Java Visual Machine",
+    "Java Version Manager"
+  ],
+  "correctAnswer": "Java Virtual Machine",
+  "explanation": "JVM is Java Virtual Machine, responsible for running Java bytecode.",
+  "category": "Java Core",
+  "difficulty": "easy",
+  "marks": 1,
+  "isActive": true,
+  "createdBy": "68b7ffa025ccbc2f7af20c49"
+},
+{
+  "_id": {
+    "$oid": "68b8129b8f8d7389e5e59dbd"
+  },
+  "tests": [
+    "68b80c368f8d7389e5e59d87"
+  ],
+  "type": "mcq",
+  "questionText": "Which keyword is used to inherit a class in Java?",
+  "options": [
+    "inherits",
+    "extend",
+    "extends",
+    "implement"
+  ],
+  "correctAnswer": "extends",
+  "explanation": "The extends keyword is used to inherit a class in Java.",
+  "category": "OOP",
+  "difficulty": "easy",
+  "marks": 1,
+  "isActive": true,
+  "createdBy": "68b7ffa025ccbc2f7af20c49"
+},
+{
+  "_id": {
+    "$oid": "68b8129b8f8d7389e5e59dc2"
+  },
+  "tests": [
+    "68b80c368f8d7389e5e59d87"
+  ],
+  "type": "mcq",
+  "questionText": "Which keyword is used to define an interface?",
+  "options": [
+    "class",
+    "interface",
+    "implements",
+    "extends"
+  ],
+  "correctAnswer": "interface",
+  "explanation": "The interface keyword is used to define an interface in Java.",
+  "category": "OOP",
+  "difficulty": "easy",
+  "marks": 1,
+  "isActive": true,
+  "createdBy": "68b7ffa025ccbc2f7af20c49"
+},
+{
+  "_id": {
+    "$oid": "68b8129b8f8d7389e5e59dba"
+  },
+  "tests": [
+    "68b80c368f8d7389e5e59d87"
+  ],
+  "type": "mcq",
+  "questionText": "Which package is imported by default in every Java program?",
+  "options": [
+    "java.util",
+    "java.lang",
+    "java.io",
+    "java.net"
+  ],
+  "correctAnswer": "java.lang",
+  "explanation": "java.lang is automatically imported in every Java program.",
+  "category": "Java Core",
+  "difficulty": "easy",
+  "marks": 1,
+  "isActive": true,
+  "createdBy": "68b7ffa025ccbc2f7af20c49"
+},
+{
+  "_id": {
+    "$oid": "68b8129b8f8d7389e5e59dc9"
+  },
+  "tests": [
+    "68b80c368f8d7389e5e59d87"
+  ],
+  "type": "mcq",
+  "questionText": "Which modifier makes a member accessible in subclasses even if in different package?",
+  "options": [
+    "private",
+    "protected",
+    "default",
+    "public"
+  ],
+  "correctAnswer": "protected",
+  "explanation": "protected members are accessible to subclasses in different packages.",
+  "category": "Java Core",
+  "difficulty": "medium",
+  "marks": 1,
+  "isActive": true,
+  "createdBy": "68b7ffa025ccbc2f7af20c49"
+},
+{
+  "_id": {
+    "$oid": "68b8129b8f8d7389e5e59dc3"
+  },
+  "tests": [
+    "68b80c368f8d7389e5e59d87"
+  ],
+  "type": "mcq",
+  "questionText": "What is the default value of a local variable in Java?",
+  "options": [
+    "0",
+    "null",
+    "depends on type",
+    "No default value"
+  ],
+  "correctAnswer": "No default value",
+  "explanation": "Local variables must be initialized explicitly; they have no default value.",
+  "category": "Java Core",
+  "difficulty": "medium",
+  "marks": 1,
+  "isActive": true,
+  "createdBy": "68b7ffa025ccbc2f7af20c49"
+},
+{
+  "_id": {
+    "$oid": "68b8129b8f8d7389e5e59dc4"
+  },
+  "tests": [
+    "68b80c368f8d7389e5e59d87"
+  ],
+  "type": "mcq",
+  "questionText": "Which of the following is true about constructors?",
+  "options": [
+    "They have return type void",
+    "They are inherited",
+    "They have no return type",
+    "They are static"
+  ],
+  "correctAnswer": "They have no return type",
+  "explanation": "Constructors do not have a return type, not even void.",
+  "category": "Java Core",
+  "difficulty": "easy",
+  "marks": 1,
+  "isActive": true,
+  "createdBy": "68b7ffa025ccbc2f7af20c49"
+},
+{
+  "_id": {
+    "$oid": "68b8129b8f8d7389e5e59dc7"
+  },
+  "tests": [
+    "68b80c368f8d7389e5e59d87"
+  ],
+  "type": "mcq",
+  "questionText": "Which of the following is not a feature of Java?",
+  "options": [
+    "Platform independent",
+    "Object-oriented",
+    "Pointer arithmetic",
+    "Automatic garbage collection"
+  ],
+  "correctAnswer": "Pointer arithmetic",
+  "explanation": "Java does not allow pointer arithmetic for safety and security.",
+  "category": "Java Core",
+  "difficulty": "easy",
+  "marks": 1,
+  "isActive": true,
+  "createdBy": "68b7ffa025ccbc2f7af20c49"
+},
+{
+  "_id": {
+    "$oid": "68b8129b8f8d7389e5e59dbb"
+  },
+  "tests": [
+    "68b80c368f8d7389e5e59d87"
+  ],
+  "type": "mcq",
+  "questionText": "Which operator is used for object reference comparison?",
+  "options": [
+    "==",
+    "equals()",
+    "compareTo()",
+    "compare()"
+  ],
+  "correctAnswer": "==",
+  "explanation": "The == operator compares references, equals() compares values/content.",
+  "category": "Java Core",
+  "difficulty": "medium",
+  "marks": 1,
+  "isActive": true,
+  "createdBy": "68b7ffa025ccbc2f7af20c49"
+},
+{
+  "_id": {
+    "$oid": "68b8129b8f8d7389e5e59dbc"
+  },
+  "tests": [
+    "68b80c368f8d7389e5e59d87"
+  ],
+  "type": "mcq",
+  "questionText": "Which concept allows one class to acquire properties of another?",
+  "options": [
+    "Encapsulation",
+    "Inheritance",
+    "Abstraction",
+    "Polymorphism"
+  ],
+  "correctAnswer": "Inheritance",
+  "explanation": "Inheritance allows a subclass to acquire fields and methods from a superclass.",
+  "category": "OOP",
+  "difficulty": "easy",
+  "marks": 1,
+  "isActive": true,
+  "createdBy": "68b7ffa025ccbc2f7af20c49"
+},
+{
+  "_id": {
+    "$oid": "68b8129b8f8d7389e5e59dbe"
+  },
+  "tests": [
+    "68b80c368f8d7389e5e59d87"
+  ],
+  "type": "mcq",
+  "questionText": "Which block is always executed whether an exception is handled or not?",
+  "options": [
+    "try",
+    "catch",
+    "finally",
+    "throw"
+  ],
+  "correctAnswer": "finally",
+  "explanation": "finally block executes whether or not an exception occurs or is caught.",
+  "category": "Exception Handling",
+  "difficulty": "easy",
+  "marks": 1,
+  "isActive": true,
+  "createdBy": "68b7ffa025ccbc2f7af20c49"
+},
+{
+  "_id": {
+    "$oid": "68b8129b8f8d7389e5e59dc0"
+  },
+  "tests": [
+    "68b80c368f8d7389e5e59d87"
+  ],
+  "type": "mcq",
+  "questionText": "Which class is the parent of all exceptions in Java?",
+  "options": [
+    "Throwable",
+    "Exception",
+    "Error",
+    "RuntimeException"
+  ],
+  "correctAnswer": "Throwable",
+  "explanation": "Throwable is the superclass of all exceptions and errors.",
+  "category": "Exception Handling",
+  "difficulty": "medium",
+  "marks": 1,
+  "isActive": true,
+  "createdBy": "68b7ffa025ccbc2f7af20c49"
+},
+{
+  "_id": {
+    "$oid": "68b8129b8f8d7389e5e59dc6"
+  },
+  "tests": [
+    "68b80c368f8d7389e5e59d87"
+  ],
+  "type": "mcq",
+  "questionText": "Which keyword allows a subclass to call the parent constructor?",
+  "options": [
+    "this",
+    "parent",
+    "super",
+    "base"
+  ],
+  "correctAnswer": "super",
+  "explanation": "The super keyword is used to call the parent constructor or methods.",
+  "category": "OOP",
+  "difficulty": "easy",
+  "marks": 1,
+  "isActive": true,
+  "createdBy": "68b7ffa025ccbc2f7af20c49"
+},
+{
+  "_id": {
+    "$oid": "68b813108f8d7389e5e59dce"
+  },
+  "tests": [
+    "68b80c368f8d7389e5e59d87"
+  ],
+  "type": "mcq",
+  "questionText": "What is method overriding?",
+  "options": [
+    "Redefining a method in a subclass with same signature",
+    "Using multiple methods with same name",
+    "Changing parameters in same class",
+    "Removing a method from superclass"
+  ],
+  "correctAnswer": "Redefining a method in a subclass with same signature",
+  "explanation": "Method overriding allows a subclass to provide a specific implementation of a superclass method.",
+  "category": "OOP",
+  "difficulty": "medium",
+  "marks": 1,
+  "isActive": true,
+  "createdBy": "68b7ffa025ccbc2f7af20c49"
+},
+{
+  "_id": {
+    "$oid": "68b813108f8d7389e5e59dd0"
+  },
+  "tests": [
+    "68b80c368f8d7389e5e59d87"
+  ],
+  "type": "mcq",
+  "questionText": "Which access modifier allows visibility everywhere?",
+  "options": [
+    "private",
+    "protected",
+    "default",
+    "public"
+  ],
+  "correctAnswer": "public",
+  "explanation": "public members are accessible from any class anywhere.",
+  "category": "Java Core",
+  "difficulty": "easy",
+  "marks": 1,
+  "isActive": true,
+  "createdBy": "68b7ffa025ccbc2f7af20c49"
+},
+{
+  "_id": {
+    "$oid": "68b813108f8d7389e5e59dd4"
+  },
+  "tests": [
+    "68b80c368f8d7389e5e59d87"
+  ],
+  "type": "mcq",
+  "questionText": "Which of the following statements is true about abstract classes?",
+  "options": [
+    "They can be instantiated directly",
+    "They can have both abstract and concrete methods",
+    "They cannot have constructors",
+    "They must be interfaces"
+  ],
+  "correctAnswer": "They can have both abstract and concrete methods",
+  "explanation": "Abstract classes may contain a mix of abstract and fully implemented methods.",
+  "category": "OOP",
+  "difficulty": "medium",
+  "marks": 1,
+  "isActive": true,
+  "createdBy": "68b7ffa025ccbc2f7af20c49"
+},
+{
+  "_id": {
+    "$oid": "68b813108f8d7389e5e59dd5"
+  },
+  "tests": [
+    "68b80c368f8d7389e5e59d87"
+  ],
+  "type": "mcq",
+  "questionText": "What does the 'throws' keyword indicate?",
+  "options": [
+    "The method throws an exception that must be handled",
+    "The method creates a new object",
+    "The method terminates immediately",
+    "The method cannot throw exceptions"
+  ],
+  "correctAnswer": "The method throws an exception that must be handled",
+  "explanation": "throws is used in a method signature to declare possible exceptions.",
+  "category": "Exception Handling",
+  "difficulty": "easy",
+  "marks": 1,
+  "isActive": true,
+  "createdBy": "68b7ffa025ccbc2f7af20c49"
+},
+{
+  "_id": {
+    "$oid": "68b813108f8d7389e5e59dcb"
+  },
+  "tests": [
+    "68b80c368f8d7389e5e59d87"
+  ],
+  "type": "mcq",
+  "questionText": "Which keyword prevents a class from being subclassed?",
+  "options": [
+    "static",
+    "abstract",
+    "final",
+    "sealed"
+  ],
+  "correctAnswer": "final",
+  "explanation": "The final keyword prevents inheritance of a class.",
+  "category": "OOP",
+  "difficulty": "medium",
+  "marks": 1,
+  "isActive": true,
+  "createdBy": "68b7ffa025ccbc2f7af20c49"
+},
+{
+  "_id": {
+    "$oid": "68b813108f8d7389e5e59dcc"
+  },
+  "tests": [
+    "68b80c368f8d7389e5e59d87"
+  ],
+  "type": "mcq",
+  "questionText": "Which keyword is used to explicitly throw an exception?",
+  "options": [
+    "throws",
+    "throw",
+    "catch",
+    "final"
+  ],
+  "correctAnswer": "throw",
+  "explanation": "throw is used to explicitly throw an exception in Java.",
+  "category": "Exception Handling",
+  "difficulty": "easy",
+  "marks": 1,
+  "isActive": true,
+  "createdBy": "68b7ffa025ccbc2f7af20c49"
+},
+{
+  "_id": {
+    "$oid": "68b813108f8d7389e5e59dcd"
+  },
+  "tests": [
+    "68b80c368f8d7389e5e59d87"
+  ],
+  "type": "mcq",
+  "questionText": "What is method overloading?",
+  "options": [
+    "Redefining a method in a subclass",
+    "Defining multiple methods with same name but different parameters",
+    "Defining multiple methods with same name and same parameters",
+    "Extending a class multiple times"
+  ],
+  "correctAnswer": "Defining multiple methods with same name but different parameters",
+  "explanation": "Method overloading is when multiple methods have the same name but differ in parameter list.",
+  "category": "OOP",
+  "difficulty": "medium",
+  "marks": 1,
+  "isActive": true,
+  "createdBy": "68b7ffa025ccbc2f7af20c49"
+},
+{
+  "_id": {
+    "$oid": "68b813108f8d7389e5e59dcf"
+  },
+  "tests": [
+    "68b80c368f8d7389e5e59d87"
+  ],
+  "type": "mcq",
+  "questionText": "Which of these are unchecked exceptions?",
+  "options": [
+    "NullPointerException",
+    "ArrayIndexOutOfBoundsException",
+    "ArithmeticException",
+    "All of the above"
+  ],
+  "correctAnswer": "All of the above",
+  "explanation": "All listed exceptions extend RuntimeException and are unchecked.",
+  "category": "Exception Handling",
+  "difficulty": "easy",
+  "marks": 1,
+  "isActive": true,
+  "createdBy": "68b7ffa025ccbc2f7af20c49"
+},
+{
+  "_id": {
+    "$oid": "68b813108f8d7389e5e59dd3"
+  },
+  "tests": [
+    "68b80c368f8d7389e5e59d87"
+  ],
+  "type": "mcq",
+  "questionText": "Which class is used for mutable strings?",
+  "options": [
+    "String",
+    "StringBuilder",
+    "StringBuffer",
+    "Both B and C"
+  ],
+  "correctAnswer": "Both B and C",
+  "explanation": "StringBuilder and StringBuffer are used for mutable sequences of characters.",
+  "category": "Java Core",
+  "difficulty": "medium",
+  "marks": 1,
+  "isActive": true,
+  "createdBy": "68b7ffa025ccbc2f7af20c49"
+},
+{
+  "_id": {
+    "$oid": "68b813108f8d7389e5e59dd6"
+  },
+  "tests": [
+    "68b80c368f8d7389e5e59d87"
+  ],
+  "type": "mcq",
+  "questionText": "What is true about static methods?",
+  "options": [
+    "They can access instance variables",
+    "They can be called without creating an object",
+    "They require object references",
+    "They override instance methods"
+  ],
+  "correctAnswer": "They can be called without creating an object",
+  "explanation": "Static methods belong to the class and can be invoked without objects.",
+  "category": "Java Core",
+  "difficulty": "easy",
+  "marks": 1,
+  "isActive": true,
+  "createdBy": "68b7ffa025ccbc2f7af20c49"
+},
+{
+  "_id": {
+    "$oid": "68b813108f8d7389e5e59dd1"
+  },
+  "tests": [
+    "68b80c368f8d7389e5e59d87"
+  ],
+  "type": "mcq",
+  "questionText": "Which of these can be used to define constants?",
+  "options": [
+    "final variables",
+    "abstract classes",
+    "interfaces",
+    "both final variables and interfaces"
+  ],
+  "correctAnswer": "both final variables and interfaces",
+  "explanation": "Constants are declared using final variables, often in interfaces for global use.",
+  "category": "Java Core",
+  "difficulty": "medium",
+  "marks": 1,
+  "isActive": true,
+  "createdBy": "68b7ffa025ccbc2f7af20c49"
+},
+{
+  "_id": {
+    "$oid": "68b813108f8d7389e5e59dd2"
+  },
+  "tests": [
+    "68b80c368f8d7389e5e59d87"
+  ],
+  "type": "mcq",
+  "questionText": "Which is true about String in Java?",
+  "options": [
+    "Strings are mutable",
+    "Strings are immutable",
+    "Strings can be changed directly",
+    "Strings use pointers"
+  ],
+  "correctAnswer": "Strings are immutable",
+  "explanation": "String in Java is immutable; changes produce new String objects.",
+  "category": "Java Core",
+  "difficulty": "easy",
+  "marks": 1,
+  "isActive": true,
+  "createdBy": "68b7ffa025ccbc2f7af20c49"
+},
+{
+  "_id": {
+    "$oid": "68b813578f8d7389e5e59dda"
+  },
+  "tests": [
+    "68b80c368f8d7389e5e59d87"
+  ],
+  "type": "mcq",
+  "questionText": "Which of these is a checked exception?",
+  "options": [
+    "IOException",
+    "ArithmeticException",
+    "NullPointerException",
+    "IndexOutOfBoundsException"
+  ],
+  "correctAnswer": "IOException",
+  "explanation": "IOException must be either handled or declared; it's a checked exception.",
+  "category": "Exception Handling",
+  "difficulty": "easy",
+  "marks": 1,
+  "isActive": true,
+  "createdBy": "68b7ffa025ccbc2f7af20c49"
+},
+{
+  "_id": {
+    "$oid": "68b813578f8d7389e5e59ddb"
+  },
+  "tests": [
+    "68b80c368f8d7389e5e59d87"
+  ],
+  "type": "mcq",
+  "questionText": "Which operator is used for object type comparison?",
+  "options": [
+    "==",
+    "equals()",
+    "instanceof",
+    "compareTo()"
+  ],
+  "correctAnswer": "instanceof",
+  "explanation": "instanceof checks whether an object is an instance of a class or subclass.",
+  "category": "Java Core",
+  "difficulty": "medium",
+  "marks": 1,
+  "isActive": true,
+  "createdBy": "68b7ffa025ccbc2f7af20c49"
+},
+{
+  "_id": {
+    "$oid": "68b813578f8d7389e5e59ddf"
+  },
+  "tests": [
+    "68b80c368f8d7389e5e59d87"
+  ],
+  "type": "mcq",
+  "questionText": "Which statement is correct about interface variables?",
+  "options": [
+    "They are final by default",
+    "They are static by default",
+    "They are public by default",
+    "All of the above"
+  ],
+  "correctAnswer": "All of the above",
+  "explanation": "Interface variables are public, static, and final by default.",
+  "category": "OOP",
+  "difficulty": "medium",
+  "marks": 1,
+  "isActive": true,
+  "createdBy": "68b7ffa025ccbc2f7af20c49"
+},
+{
+  "_id": {
+    "$oid": "68b813578f8d7389e5e59de1"
+  },
+  "tests": [
+    "68b80c368f8d7389e5e59d87"
+  ],
+  "type": "mcq",
+  "questionText": "Which method is called to start a thread in Java?",
+  "options": [
+    "run()",
+    "start()",
+    "execute()",
+    "init()"
+  ],
+  "correctAnswer": "start()",
+  "explanation": "start() method schedules a new thread for execution and calls run().",
+  "category": "Java Core",
+  "difficulty": "easy",
+  "marks": 1,
+  "isActive": true,
+  "createdBy": "68b7ffa025ccbc2f7af20c49"
+},
+{
+  "_id": {
+    "$oid": "68b813578f8d7389e5e59dd8"
+  },
+  "tests": [
+    "68b80c368f8d7389e5e59d87"
+  ],
+  "type": "mcq",
+  "questionText": "Which keyword is used to inherit a class in Java?",
+  "options": [
+    "this",
+    "super",
+    "extends",
+    "implements"
+  ],
+  "correctAnswer": "extends",
+  "explanation": "extends keyword is used for class inheritance.",
+  "category": "OOP",
+  "difficulty": "easy",
+  "marks": 1,
+  "isActive": true,
+  "createdBy": "68b7ffa025ccbc2f7af20c49"
+},
+{
+  "_id": {
+    "$oid": "68b813578f8d7389e5e59dde"
+  },
+  "tests": [
+    "68b80c368f8d7389e5e59d87"
+  ],
+  "type": "mcq",
+  "questionText": "Which collection class allows duplicates and maintains insertion order?",
+  "options": [
+    "HashSet",
+    "TreeSet",
+    "ArrayList",
+    "HashMap"
+  ],
+  "correctAnswer": "ArrayList",
+  "explanation": "ArrayList allows duplicates and maintains insertion order.",
+  "category": "Java Core",
+  "difficulty": "medium",
+  "marks": 1,
+  "isActive": true,
+  "createdBy": "68b7ffa025ccbc2f7af20c49"
+},
+{
+  "_id": {
+    "$oid": "68b813578f8d7389e5e59dd9"
+  },
+  "tests": [
+    "68b80c368f8d7389e5e59d87"
+  ],
+  "type": "mcq",
+  "questionText": "Which interface must be implemented to create a thread by a class?",
+  "options": [
+    "Runnable",
+    "Callable",
+    "Comparable",
+    "Serializable"
+  ],
+  "correctAnswer": "Runnable",
+  "explanation": "Runnable interface defines the run() method to create a thread.",
+  "category": "Java Core",
+  "difficulty": "medium",
+  "marks": 1,
+  "isActive": true,
+  "createdBy": "68b7ffa025ccbc2f7af20c49"
+},
+{
+  "_id": {
+    "$oid": "68b813578f8d7389e5e59ddc"
+  },
+  "tests": [
+    "68b80c368f8d7389e5e59d87"
+  ],
+  "type": "mcq",
+  "questionText": "Which keyword is used to call the parent class constructor?",
+  "options": [
+    "super",
+    "this",
+    "extends",
+    "parent"
+  ],
+  "correctAnswer": "super",
+  "explanation": "super() is used to invoke the parent class constructor.",
+  "category": "OOP",
+  "difficulty": "easy",
+  "marks": 1,
+  "isActive": true,
+  "createdBy": "68b7ffa025ccbc2f7af20c49"
+},
+{
+  "_id": {
+    "$oid": "68b813578f8d7389e5e59de0"
+  },
+  "tests": [
+    "68b80c368f8d7389e5e59d87"
+  ],
+  "type": "mcq",
+  "questionText": "What is the default value of a local variable?",
+  "options": [
+    "null",
+    "0",
+    "false",
+    "No default value"
+  ],
+  "correctAnswer": "No default value",
+  "explanation": "Local variables must be initialized before use; they have no default value.",
+  "category": "Java Core",
+  "difficulty": "medium",
+  "marks": 1,
+  "isActive": true,
+  "createdBy": "68b7ffa025ccbc2f7af20c49"
+},
+{
+  "_id": {
+    "$oid": "68b813578f8d7389e5e59ddd"
+  },
+  "tests": [
+    "68b80c368f8d7389e5e59d87"
+  ],
+  "type": "mcq",
+  "questionText": "In Java, which block is always executed whether exception occurs or not?",
+  "options": [
+    "try",
+    "catch",
+    "finally",
+    "throw"
+  ],
+  "correctAnswer": "finally",
+  "explanation": "finally block is always executed for resource cleanup.",
+  "category": "Exception Handling",
+  "difficulty": "easy",
+  "marks": 1,
+  "isActive": true,
+  "createdBy": "68b7ffa025ccbc2f7af20c49"
+},
+{
+  "_id": {
+    "$oid": "68b8138a8f8d7389e5e59de5"
+  },
+  "tests": [
+    "68b80c368f8d7389e5e59d87"
+  ],
+  "type": "mcq",
+  "questionText": "Which access modifier makes a member accessible only within its own class?",
+  "options": [
+    "public",
+    "protected",
+    "default",
+    "private"
+  ],
+  "correctAnswer": "private",
+  "explanation": "private members are accessible only within the class they are declared in.",
+  "category": "Java Core",
+  "difficulty": "easy",
+  "marks": 1,
+  "isActive": true,
+  "createdBy": "68b7ffa025ccbc2f7af20c49"
+},
+{
+  "_id": {
+    "$oid": "68b8138a8f8d7389e5e59de8"
+  },
+  "tests": [
+    "68b80c368f8d7389e5e59d87"
+  ],
+  "type": "mcq",
+  "questionText": "What happens if no catch block matches the thrown exception?",
+  "options": [
+    "Program terminates abnormally",
+    "Compiler error",
+    "Finally block runs and program continues",
+    "None of these"
+  ],
+  "correctAnswer": "Program terminates abnormally",
+  "explanation": "If no catch block can handle the exception, it propagates up and usually terminates the program.",
+  "category": "Exception Handling",
+  "difficulty": "medium",
+  "marks": 1,
+  "isActive": true,
+  "createdBy": "68b7ffa025ccbc2f7af20c49"
+},
+{
+  "_id": {
+    "$oid": "68b8138a8f8d7389e5e59dec"
+  },
+  "tests": [
+    "68b80c368f8d7389e5e59d87"
+  ],
+  "type": "mcq",
+  "questionText": "Which keyword is used to create an object?",
+  "options": [
+    "this",
+    "super",
+    "create",
+    "new"
+  ],
+  "correctAnswer": "new",
+  "explanation": "new keyword instantiates a class and allocates memory for it.",
+  "category": "Java Core",
+  "difficulty": "easy",
+  "marks": 1,
+  "isActive": true,
+  "createdBy": "68b7ffa025ccbc2f7af20c49"
+},
+{
+  "_id": {
+    "$oid": "68b8138a8f8d7389e5e59de4"
+  },
+  "tests": [
+    "68b80c368f8d7389e5e59d87"
+  ],
+  "type": "mcq",
+  "questionText": "Which keyword is used to prevent inheritance of a class?",
+  "options": [
+    "static",
+    "final",
+    "private",
+    "abstract"
+  ],
+  "correctAnswer": "final",
+  "explanation": "A class declared final cannot be subclassed.",
+  "category": "OOP",
+  "difficulty": "easy",
+  "marks": 1,
+  "isActive": true,
+  "createdBy": "68b7ffa025ccbc2f7af20c49"
+},
+{
+  "_id": {
+    "$oid": "68b8138a8f8d7389e5e59de6"
+  },
+  "tests": [
+    "68b80c368f8d7389e5e59d87"
+  ],
+  "type": "mcq",
+  "questionText": "Which feature of OOP allows using the same method name with different parameters?",
+  "options": [
+    "Abstraction",
+    "Inheritance",
+    "Polymorphism",
+    "Encapsulation"
+  ],
+  "correctAnswer": "Polymorphism",
+  "explanation": "Method overloading is a compile-time polymorphism example.",
+  "category": "OOP",
+  "difficulty": "medium",
+  "marks": 1,
+  "isActive": true,
+  "createdBy": "68b7ffa025ccbc2f7af20c49"
+},
+{
+  "_id": {
+    "$oid": "68b8138a8f8d7389e5e59de9"
+  },
+  "tests": [
+    "68b80c368f8d7389e5e59d87"
+  ],
+  "type": "mcq",
+  "questionText": "Which collection guarantees unique elements with no specific order?",
+  "options": [
+    "ArrayList",
+    "HashSet",
+    "LinkedList",
+    "TreeMap"
+  ],
+  "correctAnswer": "HashSet",
+  "explanation": "HashSet stores unique elements and does not maintain any order.",
+  "category": "Java Core",
+  "difficulty": "easy",
+  "marks": 1,
+  "isActive": true,
+  "createdBy": "68b7ffa025ccbc2f7af20c49"
+},
+{
+  "_id": {
+    "$oid": "68b8138a8f8d7389e5e59deb"
+  },
+  "tests": [
+    "68b80c368f8d7389e5e59d87"
+  ],
+  "type": "mcq",
+  "questionText": "Which feature of Java ensures platform independence?",
+  "options": [
+    "JVM",
+    "JRE",
+    "JDK",
+    "All of these"
+  ],
+  "correctAnswer": "JVM",
+  "explanation": "JVM executes bytecode, enabling platform independence.",
+  "category": "Java Core",
+  "difficulty": "medium",
+  "marks": 1,
+  "isActive": true,
+  "createdBy": "68b7ffa025ccbc2f7af20c49"
+},
+{
+  "_id": {
+    "$oid": "68b8138a8f8d7389e5e59de3"
+  },
+  "tests": [
+    "68b80c368f8d7389e5e59d87"
+  ],
+  "type": "mcq",
+  "questionText": "Which class is the root of the Java exception hierarchy?",
+  "options": [
+    "Throwable",
+    "Object",
+    "Exception",
+    "RuntimeException"
+  ],
+  "correctAnswer": "Throwable",
+  "explanation": "Throwable is the superclass of all errors and exceptions.",
+  "category": "Exception Handling",
+  "difficulty": "easy",
+  "marks": 1,
+  "isActive": true,
+  "createdBy": "68b7ffa025ccbc2f7af20c49"
+},
+{
+  "_id": {
+    "$oid": "68b8138a8f8d7389e5e59de7"
+  },
+  "tests": [
+    "68b80c368f8d7389e5e59d87"
+  ],
+  "type": "mcq",
+  "questionText": "Which class is used for reading input from the console?",
+  "options": [
+    "Scanner",
+    "BufferedReader",
+    "InputStreamReader",
+    "All of these"
+  ],
+  "correctAnswer": "All of these",
+  "explanation": "All three classes can be used to read input from the console in different ways.",
+  "category": "Java Core",
+  "difficulty": "medium",
+  "marks": 1,
+  "isActive": true,
+  "createdBy": "68b7ffa025ccbc2f7af20c49"
+},
+{
+  "_id": {
+    "$oid": "68b8138a8f8d7389e5e59dea"
+  },
+  "tests": [
+    "68b80c368f8d7389e5e59d87"
+  ],
+  "type": "mcq",
+  "questionText": "Which keyword is used to refer to the current object?",
+  "options": [
+    "super",
+    "this",
+    "self",
+    "current"
+  ],
+  "correctAnswer": "this",
+  "explanation": "this is a reference to the current object instance.",
+  "category": "Java Core",
+  "difficulty": "easy",
+  "marks": 1,
+  "isActive": true,
+  "createdBy": "68b7ffa025ccbc2f7af20c49"
+},
+{
+  "_id": {
+    "$oid": "68b813c28f8d7389e5e59dee"
+  },
+  "tests": [
+    "68b80c368f8d7389e5e59d87"
+  ],
+  "type": "mcq",
+  "questionText": "Which interface does java.util.List extend?",
+  "options": [
+    "Collection",
+    "Map",
+    "Queue",
+    "Set"
+  ],
+  "correctAnswer": "Collection",
+  "explanation": "List is a subinterface of Collection.",
+  "category": "Java Core",
+  "difficulty": "easy",
+  "marks": 1,
+  "isActive": true,
+  "createdBy": "68b7ffa025ccbc2f7af20c49"
+},
+{
+  "_id": {
+    "$oid": "68b813c28f8d7389e5e59df0"
+  },
+  "tests": [
+    "68b80c368f8d7389e5e59d87"
+  ],
+  "type": "mcq",
+  "questionText": "Which block executes whether an exception occurs or not?",
+  "options": [
+    "try",
+    "catch",
+    "finally",
+    "throw"
+  ],
+  "correctAnswer": "finally",
+  "explanation": "The finally block always executes after try-catch, regardless of exception.",
+  "category": "Exception Handling",
+  "difficulty": "medium",
+  "marks": 1,
+  "isActive": true,
+  "createdBy": "68b7ffa025ccbc2f7af20c49"
+},
+{
+  "_id": {
+    "$oid": "68b813c28f8d7389e5e59df2"
+  },
+  "tests": [
+    "68b80c368f8d7389e5e59d87"
+  ],
+  "type": "mcq",
+  "questionText": "Which keyword is used to inherit a class in Java?",
+  "options": [
+    "extends",
+    "implements",
+    "inherits",
+    "super"
+  ],
+  "correctAnswer": "extends",
+  "explanation": "extends keyword is used for class inheritance.",
+  "category": "OOP",
+  "difficulty": "easy",
+  "marks": 1,
+  "isActive": true,
+  "createdBy": "68b7ffa025ccbc2f7af20c49"
+},
+{
+  "_id": {
+    "$oid": "68b813c28f8d7389e5e59df3"
+  },
+  "tests": [
+    "68b80c368f8d7389e5e59d87"
+  ],
+  "type": "mcq",
+  "questionText": "Which keyword is used to throw an exception explicitly?",
+  "options": [
+    "throw",
+    "throws",
+    "finally",
+    "catch"
+  ],
+  "correctAnswer": "throw",
+  "explanation": "throw is used to explicitly throw an exception instance.",
+  "category": "Exception Handling",
+  "difficulty": "easy",
+  "marks": 1,
+  "isActive": true,
+  "createdBy": "68b7ffa025ccbc2f7af20c49"
+},
+{
+  "_id": {
+    "$oid": "68b813c28f8d7389e5e59df7"
+  },
+  "tests": [
+    "68b80c368f8d7389e5e59d87"
+  ],
+  "type": "mcq",
+  "questionText": "Which of these allows multiple inheritance in Java?",
+  "options": [
+    "Classes",
+    "Abstract classes",
+    "Interfaces",
+    "None"
+  ],
+  "correctAnswer": "Interfaces",
+  "explanation": "Multiple inheritance is supported through interfaces in Java.",
+  "category": "OOP",
+  "difficulty": "medium",
+  "marks": 1,
+  "isActive": true,
+  "createdBy": "68b7ffa025ccbc2f7af20c49"
+},
+{
+  "_id": {
+    "$oid": "68b813c28f8d7389e5e59df5"
+  },
+  "tests": [
+    "68b80c368f8d7389e5e59d87"
+  ],
+  "type": "mcq",
+  "questionText": "Which of these are marker interfaces?",
+  "options": [
+    "Serializable",
+    "Cloneable",
+    "Both A and B",
+    "None"
+  ],
+  "correctAnswer": "Both A and B",
+  "explanation": "Serializable and Cloneable are marker interfaces with no methods.",
+  "category": "Java Core",
+  "difficulty": "medium",
+  "marks": 1,
+  "isActive": true,
+  "createdBy": "68b7ffa025ccbc2f7af20c49"
+},
+{
+  "_id": {
+    "$oid": "68b813c28f8d7389e5e59df6"
+  },
+  "tests": [
+    "68b80c368f8d7389e5e59d87"
+  ],
+  "type": "mcq",
+  "questionText": "Which concept hides the internal details and shows only functionality?",
+  "options": [
+    "Encapsulation",
+    "Polymorphism",
+    "Abstraction",
+    "Inheritance"
+  ],
+  "correctAnswer": "Abstraction",
+  "explanation": "Abstraction is achieved using abstract classes and interfaces.",
+  "category": "OOP",
+  "difficulty": "medium",
+  "marks": 1,
+  "isActive": true,
+  "createdBy": "68b7ffa025ccbc2f7af20c49"
+},
+{
+  "_id": {
+    "$oid": "68b813c28f8d7389e5e59df1"
+  },
+  "tests": [
+    "68b80c368f8d7389e5e59d87"
+  ],
+  "type": "mcq",
+  "questionText": "Which class is a checked exception?",
+  "options": [
+    "IOException",
+    "NullPointerException",
+    "ArithmeticException",
+    "ArrayIndexOutOfBoundsException"
+  ],
+  "correctAnswer": "IOException",
+  "explanation": "IOException is a checked exception that must be handled or declared.",
+  "category": "Exception Handling",
+  "difficulty": "medium",
+  "marks": 1,
+  "isActive": true,
+  "createdBy": "68b7ffa025ccbc2f7af20c49"
+},
+{
+  "_id": {
+    "$oid": "68b813c28f8d7389e5e59df4"
+  },
+  "tests": [
+    "68b80c368f8d7389e5e59d87"
+  ],
+  "type": "mcq",
+  "questionText": "Which keyword indicates that a method may throw exceptions?",
+  "options": [
+    "throw",
+    "throws",
+    "try",
+    "catch"
+  ],
+  "correctAnswer": "throws",
+  "explanation": "throws is used in a method signature to declare exceptions.",
+  "category": "Exception Handling",
+  "difficulty": "easy",
+  "marks": 1,
+  "isActive": true,
+  "createdBy": "68b7ffa025ccbc2f7af20c49"
+},
+{
+  "_id": {
+    "$oid": "68b813c28f8d7389e5e59def"
+  },
+  "tests": [
+    "68b80c368f8d7389e5e59d87"
+  ],
+  "type": "mcq",
+  "questionText": "Which keyword is used to call the constructor of a parent class?",
+  "options": [
+    "parent",
+    "this",
+    "super",
+    "base"
+  ],
+  "correctAnswer": "super",
+  "explanation": "super() is used to call the immediate parent class constructor.",
+  "category": "OOP",
+  "difficulty": "easy",
+  "marks": 1,
+  "isActive": true,
+  "createdBy": "68b7ffa025ccbc2f7af20c49"
+},
+{
+  "_id": {
+    "$oid": "68b910c39c02aeb86cfefd03"
+  },
+  "tests": [
+    "68b80c368f8d7389e5e59d87"
+  ],
+  "type": "mcq",
+  "questionText": "Which package is automatically imported in every Java program?",
+  "options": [
+    "java.util",
+    "java.io",
+    "java.lang",
+    "java.net"
+  ],
+  "correctAnswer": "java.lang",
+  "explanation": "java.lang is imported by default in all Java programs.",
+  "category": "Java Core",
+  "difficulty": "easy",
+  "marks": 1,
+  "isActive": true,
+  "createdBy": "68b7ffa025ccbc2f7af20c49"
+},
+{
+  "_id": {
+    "$oid": "68b910c39c02aeb86cfefd04"
+  },
+  "tests": [
+    "68b80c368f8d7389e5e59d87"
+  ],
+  "type": "mcq",
+  "questionText": "Which access modifier makes a member visible only within the same package?",
+  "options": [
+    "private",
+    "public",
+    "protected",
+    "default"
+  ],
+  "correctAnswer": "default",
+  "explanation": "If no modifier is specified, the default/package-private level applies.",
+  "category": "Java Core",
+  "difficulty": "medium",
+  "marks": 1,
+  "isActive": true,
+  "createdBy": "68b7ffa025ccbc2f7af20c49"
+},
+{
+  "_id": {
+    "$oid": "68b910c39c02aeb86cfefd05"
+  },
+  "tests": [
+    "68b80c368f8d7389e5e59d87"
+  ],
+  "type": "mcq",
+  "questionText": "What happens if main() is declared private?",
+  "options": [
+    "Compile error",
+    "Runtime error",
+    "Program runs normally",
+    "JVM ignores it"
+  ],
+  "correctAnswer": "Runtime error",
+  "explanation": "JVM cannot access private main(), causing a runtime error.",
+  "category": "Java Core",
+  "difficulty": "medium",
+  "marks": 1,
+  "isActive": true,
+  "createdBy": "68b7ffa025ccbc2f7af20c49"
+},
+{
+  "_id": {
+    "$oid": "68b910c39c02aeb86cfefd06"
+  },
+  "tests": [
+    "68b80c368f8d7389e5e59d87"
+  ],
+  "type": "mcq",
+  "questionText": "Which operator is used for object type comparison?",
+  "options": [
+    "==",
+    "equals()",
+    "instanceof",
+    "compareTo()"
+  ],
+  "correctAnswer": "instanceof",
+  "explanation": "instanceof checks if an object is an instance of a class/interface.",
+  "category": "Java Core",
+  "difficulty": "medium",
+  "marks": 1,
+  "isActive": true,
+  "createdBy": "68b7ffa025ccbc2f7af20c49"
+},
+{
+  "_id": {
+    "$oid": "68b910c39c02aeb86cfefd07"
+  },
+  "tests": [
+    "68b80c368f8d7389e5e59d87"
+  ],
+  "type": "mcq",
+  "questionText": "Which exception is thrown when dividing by zero in integers?",
+  "options": [
+    "NumberFormatException",
+    "ArithmeticException",
+    "IllegalArgumentException",
+    "NullPointerException"
+  ],
+  "correctAnswer": "ArithmeticException",
+  "explanation": "Dividing an integer by zero throws ArithmeticException.",
+  "category": "Exception Handling",
+  "difficulty": "easy",
+  "marks": 1,
+  "isActive": true,
+  "createdBy": "68b7ffa025ccbc2f7af20c49"
+},
+{
+  "_id": {
+    "$oid": "68b910c39c02aeb86cfefd08"
+  },
+  "tests": [
+    "68b80c368f8d7389e5e59d87"
+  ],
+  "type": "mcq",
+  "questionText": "Which method is called before garbage collection?",
+  "options": [
+    "dispose()",
+    "finalize()",
+    "clean()",
+    "end()"
+  ],
+  "correctAnswer": "finalize()",
+  "explanation": "The finalize() method may be invoked before an object is garbage-collected.",
+  "category": "Java Core",
+  "difficulty": "hard",
+  "marks": 1,
+  "isActive": true,
+  "createdBy": "68b7ffa025ccbc2f7af20c49"
+},
+{
+  "_id": {
+    "$oid": "68b910c39c02aeb86cfefd09"
+  },
+  "tests": [
+    "68b80c368f8d7389e5e59d87"
+  ],
+  "type": "mcq",
+  "questionText": "Which keyword stops further inheritance of a class?",
+  "options": [
+    "abstract",
+    "final",
+    "static",
+    "private"
+  ],
+  "correctAnswer": "final",
+  "explanation": "A final class cannot be inherited.",
+  "category": "OOP",
+  "difficulty": "easy",
+  "marks": 1,
+  "isActive": true,
+  "createdBy": "68b7ffa025ccbc2f7af20c49"
+},
+{
+  "_id": {
+    "$oid": "68b910c39c02aeb86cfefd0a"
+  },
+  "tests": [
+    "68b80c368f8d7389e5e59d87"
+  ],
+  "type": "mcq",
+  "questionText": "Which feature allows methods with the same name but different signatures?",
+  "options": [
+    "Overriding",
+    "Overloading",
+    "Abstraction",
+    "Encapsulation"
+  ],
+  "correctAnswer": "Overloading",
+  "explanation": "Overloading allows multiple methods with the same name but different parameter lists.",
+  "category": "OOP",
+  "difficulty": "easy",
+  "marks": 1,
+  "isActive": true,
+  "createdBy": "68b7ffa025ccbc2f7af20c49"
+},
+{
+  "_id": {
+    "$oid": "68b910c39c02aeb86cfefd0b"
+  },
+  "tests": [
+    "68b80c368f8d7389e5e59d87"
+  ],
+  "type": "mcq",
+  "questionText": "Which feature allows a subclass to provide its own implementation of a method?",
+  "options": [
+    "Overriding",
+    "Overloading",
+    "Abstraction",
+    "Encapsulation"
+  ],
+  "correctAnswer": "Overriding",
+  "explanation": "Overriding allows a subclass to redefine a superclass method.",
+  "category": "OOP",
+  "difficulty": "easy",
+  "marks": 1,
+  "isActive": true,
+  "createdBy": "68b7ffa025ccbc2f7af20c49"
+},
+{
+  "_id": {
+    "$oid": "68b910c39c02aeb86cfefd0c"
+  },
+  "tests": [
+    "68b80c368f8d7389e5e59d87"
+  ],
+  "type": "mcq",
+  "questionText": "Which statement is true about constructors?",
+  "options": [
+    "They have a return type",
+    "They are inherited",
+    "They can be overloaded",
+    "They can be static"
+  ],
+  "correctAnswer": "They can be overloaded",
+  "explanation": "Constructors cannot be inherited, cannot be static, but can be overloaded.",
+  "category": "OOP",
+  "difficulty": "medium",
+  "marks": 1,
+  "isActive": true,
+  "createdBy": "68b7ffa025ccbc2f7af20c49"
+},
+{
+  "_id": {
+    "$oid": "68b910c39c02aeb86cfefd0d"
+  },
+  "tests": [
+    "68b80c368f8d7389e5e59d87"
+  ],
+  "type": "mcq",
+  "questionText": "Which data structure does HashMap use internally?",
+  "options": [
+    "Array",
+    "LinkedList",
+    "Hash table",
+    "Tree"
+  ],
+  "correctAnswer": "Hash table",
+  "explanation": "HashMap uses a hash table internally to store key-value pairs.",
+  "category": "Java Core",
+  "difficulty": "medium",
+  "marks": 1,
+  "isActive": true,
+  "createdBy": "68b7ffa025ccbc2f7af20c49"
+},
+{
+  "_id": {
+    "$oid": "68b910c39c02aeb86cfefd0e"
+  },
+  "tests": [
+    "68b80c368f8d7389e5e59d87"
+  ],
+  "type": "mcq",
+  "questionText": "Which collection class is synchronized?",
+  "options": [
+    "ArrayList",
+    "HashMap",
+    "Vector",
+    "HashSet"
+  ],
+  "correctAnswer": "Vector",
+  "explanation": "Vector is a synchronized collection, unlike ArrayList.",
+  "category": "Java Core",
+  "difficulty": "medium",
+  "marks": 1,
+  "isActive": true,
+  "createdBy": "68b7ffa025ccbc2f7af20c49"
+},
+{
+  "_id": {
+    "$oid": "68b910c39c02aeb86cfefd0f"
+  },
+  "tests": [
+    "68b80c368f8d7389e5e59d87"
+  ],
+  "type": "mcq",
+  "questionText": "What is returned by x.equals(y) if x and y reference the same object?",
+  "options": [
+    "true",
+    "false",
+    "null",
+    "exception"
+  ],
+  "correctAnswer": "true",
+  "explanation": "equals() compares values; same reference means they are equal.",
+  "category": "Java Core",
+  "difficulty": "easy",
+  "marks": 1,
+  "isActive": true,
+  "createdBy": "68b7ffa025ccbc2f7af20c49"
+},
+{
+  "_id": {
+    "$oid": "68b910c39c02aeb86cfefd10"
+  },
+  "tests": [
+    "68b80c368f8d7389e5e59d87"
+  ],
+  "type": "mcq",
+  "questionText": "Which keyword is used to refer to the current object?",
+  "options": [
+    "this",
+    "self",
+    "current",
+    "object"
+  ],
+  "correctAnswer": "this",
+  "explanation": "this keyword is used to refer to the current object in Java.",
+  "category": "Java Core",
+  "difficulty": "easy",
+  "marks": 1,
+  "isActive": true,
+  "createdBy": "68b7ffa025ccbc2f7af20c49"
+},
+{
+  "_id": {
+    "$oid": "68b910fc9c02aeb86cfefd12"
+  },
+  "tests": [
+    "68b80c368f8d7389e5e59d87"
+  ],
+  "type": "mcq",
+  "questionText": "Which keyword is used to inherit a class in Java?",
+  "options": [
+    "this",
+    "implements",
+    "extends",
+    "instanceof"
+  ],
+  "correctAnswer": "extends",
+  "explanation": "The extends keyword is used for class inheritance.",
+  "category": "OOP",
+  "difficulty": "easy",
+  "marks": 1,
+  "isActive": true,
+  "createdBy": "68b7ffa025ccbc2f7af20c49"
+},
+{
+  "_id": {
+    "$oid": "68b910fc9c02aeb86cfefd13"
+  },
+  "tests": [
+    "68b80c368f8d7389e5e59d87"
+  ],
+  "type": "mcq",
+  "questionText": "Which method in Object class is used for creating a copy of an object?",
+  "options": [
+    "clone()",
+    "copy()",
+    "duplicate()",
+    "replicate()"
+  ],
+  "correctAnswer": "clone()",
+  "explanation": "clone() is used to create a field-by-field copy of an object.",
+  "category": "Java Core",
+  "difficulty": "medium",
+  "marks": 1,
+  "isActive": true,
+  "createdBy": "68b7ffa025ccbc2f7af20c49"
+},
+{
+  "_id": {
+    "$oid": "68b910fc9c02aeb86cfefd14"
+  },
+  "tests": [
+    "68b80c368f8d7389e5e59d87"
+  ],
+  "type": "mcq",
+  "questionText": "Which keyword is used to prevent method overriding?",
+  "options": [
+    "private",
+    "static",
+    "final",
+    "protected"
+  ],
+  "correctAnswer": "final",
+  "explanation": "Declaring a method final prevents it from being overridden.",
+  "category": "OOP",
+  "difficulty": "medium",
+  "marks": 1,
+  "isActive": true,
+  "createdBy": "68b7ffa025ccbc2f7af20c49"
+},
+{
+  "_id": {
+    "$oid": "68b910fc9c02aeb86cfefd15"
+  },
+  "tests": [
+    "68b80c368f8d7389e5e59d87"
+  ],
+  "type": "mcq",
+  "questionText": "What will happen if you do not provide any constructor in a class?",
+  "options": [
+    "Compile error",
+    "Runtime error",
+    "Java provides a default constructor",
+    "Class cannot be used"
+  ],
+  "correctAnswer": "Java provides a default constructor",
+  "explanation": "If no constructor is defined, Java provides a no-argument default constructor.",
+  "category": "OOP",
+  "difficulty": "easy",
+  "marks": 1,
+  "isActive": true,
+  "createdBy": "68b7ffa025ccbc2f7af20c49"
+},
+{
+  "_id": {
+    "$oid": "68b910fc9c02aeb86cfefd16"
+  },
+  "tests": [
+    "68b80c368f8d7389e5e59d87"
+  ],
+  "type": "mcq",
+  "questionText": "Which type of class cannot be instantiated?",
+  "options": [
+    "Concrete class",
+    "Static class",
+    "Abstract class",
+    "Final class"
+  ],
+  "correctAnswer": "Abstract class",
+  "explanation": "Abstract classes cannot be instantiated directly.",
+  "category": "OOP",
+  "difficulty": "easy",
+  "marks": 1,
+  "isActive": true,
+  "createdBy": "68b7ffa025ccbc2f7af20c49"
+},
+{
+  "_id": {
+    "$oid": "68b910fc9c02aeb86cfefd17"
+  },
+  "tests": [
+    "68b80c368f8d7389e5e59d87"
+  ],
+  "type": "mcq",
+  "questionText": "Which keyword is used to implement multiple inheritance in Java?",
+  "options": [
+    "extends",
+    "implements",
+    "inherits",
+    "multiple"
+  ],
+  "correctAnswer": "implements",
+  "explanation": "Multiple inheritance is achieved using interfaces with implements keyword.",
+  "category": "OOP",
+  "difficulty": "medium",
+  "marks": 1,
+  "isActive": true,
+  "createdBy": "68b7ffa025ccbc2f7af20c49"
+},
+{
+  "_id": {
+    "$oid": "68b910fc9c02aeb86cfefd18"
+  },
+  "tests": [
+    "68b80c368f8d7389e5e59d87"
+  ],
+  "type": "mcq",
+  "questionText": "Which exception is thrown if you access an array beyond its size?",
+  "options": [
+    "NullPointerException",
+    "ArrayIndexOutOfBoundsException",
+    "ArithmeticException",
+    "ClassCastException"
+  ],
+  "correctAnswer": "ArrayIndexOutOfBoundsException",
+  "explanation": "Accessing array out of bounds causes ArrayIndexOutOfBoundsException.",
+  "category": "Exception Handling",
+  "difficulty": "easy",
+  "marks": 1,
+  "isActive": true,
+  "createdBy": "68b7ffa025ccbc2f7af20c49"
+},
+{
+  "_id": {
+    "$oid": "68b910fc9c02aeb86cfefd19"
+  },
+  "tests": [
+    "68b80c368f8d7389e5e59d87"
+  ],
+  "type": "mcq",
+  "questionText": "Which block is always executed whether exception occurs or not?",
+  "options": [
+    "try",
+    "catch",
+    "throw",
+    "finally"
+  ],
+  "correctAnswer": "finally",
+  "explanation": "finally block always executes whether an exception occurs or not.",
+  "category": "Exception Handling",
+  "difficulty": "easy",
+  "marks": 1,
+  "isActive": true,
+  "createdBy": "68b7ffa025ccbc2f7af20c49"
+},
+{
+  "_id": {
+    "$oid": "68b910fc9c02aeb86cfefd1a"
+  },
+  "tests": [
+    "68b80c368f8d7389e5e59d87"
+  ],
+  "type": "mcq",
+  "questionText": "Which checked exception is thrown when a class is not found at runtime?",
+  "options": [
+    "NoClassDefFoundError",
+    "ClassCastException",
+    "ClassNotFoundException",
+    "IllegalStateException"
+  ],
+  "correctAnswer": "ClassNotFoundException",
+  "explanation": "ClassNotFoundException is a checked exception thrown when class is not found at runtime.",
+  "category": "Exception Handling",
+  "difficulty": "medium",
+  "marks": 1,
+  "isActive": true,
+  "createdBy": "68b7ffa025ccbc2f7af20c49"
+},
+{
+  "_id": {
+    "$oid": "68b910fc9c02aeb86cfefd1b"
+  },
+  "tests": [
+    "68b80c368f8d7389e5e59d87"
+  ],
+  "type": "mcq",
+  "questionText": "What is the base class for all exceptions in Java?",
+  "options": [
+    "Throwable",
+    "Exception",
+    "Error",
+    "RuntimeException"
+  ],
+  "correctAnswer": "Throwable",
+  "explanation": "Throwable is the superclass of all exceptions and errors in Java.",
+  "category": "Exception Handling",
+  "difficulty": "medium",
+  "marks": 1,
+  "isActive": true,
+  "createdBy": "68b7ffa025ccbc2f7af20c49"
+},
+{
+  "_id": {
+    "$oid": "68b911209c02aeb86cfefd1d"
+  },
+  "tests": [
+    "68b80c368f8d7389e5e59d87"
+  ],
+  "type": "mcq",
+  "questionText": "Which method must be overridden when a class implements the Runnable interface?",
+  "options": [
+    "execute()",
+    "start()",
+    "run()",
+    "process()"
+  ],
+  "correctAnswer": "run()",
+  "explanation": "The run() method is executed by a thread when it starts.",
+  "category": "Java Core",
+  "difficulty": "easy",
+  "marks": 1,
+  "isActive": true,
+  "createdBy": "68b7ffa025ccbc2f7af20c49"
+},
+{
+  "_id": {
+    "$oid": "68b911209c02aeb86cfefd1e"
+  },
+  "tests": [
+    "68b80c368f8d7389e5e59d87"
+  ],
+  "type": "mcq",
+  "questionText": "Which Java keyword is used to handle exceptions?",
+  "options": [
+    "handle",
+    "catch",
+    "throw",
+    "check"
+  ],
+  "correctAnswer": "catch",
+  "explanation": "Exceptions are caught and handled using try-catch blocks.",
+  "category": "Exception Handling",
+  "difficulty": "easy",
+  "marks": 1,
+  "isActive": true,
+  "createdBy": "68b7ffa025ccbc2f7af20c49"
+},
+{
+  "_id": {
+    "$oid": "68b911209c02aeb86cfefd1f"
+  },
+  "tests": [
+    "68b80c368f8d7389e5e59d87"
+  ],
+  "type": "mcq",
+  "questionText": "Which keyword is used to explicitly throw an exception?",
+  "options": [
+    "throws",
+    "throw",
+    "catch",
+    "raise"
+  ],
+  "correctAnswer": "throw",
+  "explanation": "The throw keyword is used to explicitly throw an exception.",
+  "category": "Exception Handling",
+  "difficulty": "medium",
+  "marks": 1,
+  "isActive": true,
+  "createdBy": "68b7ffa025ccbc2f7af20c49"
+},
+{
+  "_id": {
+    "$oid": "68b911209c02aeb86cfefd20"
+  },
+  "tests": [
+    "68b80c368f8d7389e5e59d87"
+  ],
+  "type": "mcq",
+  "questionText": "What is method overloading?",
+  "options": [
+    "Same method name, different parameter list",
+    "Same method name, same parameter list",
+    "Different class, same method name",
+    "Redefining a method in child class"
+  ],
+  "correctAnswer": "Same method name, different parameter list",
+  "explanation": "Method overloading allows multiple methods with the same name but different parameter lists.",
+  "category": "OOP",
+  "difficulty": "easy",
+  "marks": 1,
+  "isActive": true,
+  "createdBy": "68b7ffa025ccbc2f7af20c49"
+},
+{
+  "_id": {
+    "$oid": "68b911209c02aeb86cfefd21"
+  },
+  "tests": [
+    "68b80c368f8d7389e5e59d87"
+  ],
+  "type": "mcq",
+  "questionText": "What is method overriding?",
+  "options": [
+    "Redefining a method in a subclass with same signature",
+    "Creating multiple methods with the same name",
+    "Changing method return type",
+    "Changing method access modifier"
+  ],
+  "correctAnswer": "Redefining a method in a subclass with same signature",
+  "explanation": "Method overriding occurs when a subclass redefines a method inherited from its superclass.",
+  "category": "OOP",
+  "difficulty": "medium",
+  "marks": 1,
+  "isActive": true,
+  "createdBy": "68b7ffa025ccbc2f7af20c49"
+},
+{
+  "_id": {
+    "$oid": "68b911209c02aeb86cfefd22"
+  },
+  "tests": [
+    "68b80c368f8d7389e5e59d87"
+  ],
+  "type": "mcq",
+  "questionText": "What is the parent class of all Java classes?",
+  "options": [
+    "Object",
+    "Class",
+    "Base",
+    "Root"
+  ],
+  "correctAnswer": "Object",
+  "explanation": "All Java classes implicitly inherit from the Object class.",
+  "category": "Java Core",
+  "difficulty": "easy",
+  "marks": 1,
+  "isActive": true,
+  "createdBy": "68b7ffa025ccbc2f7af20c49"
+},
+{
+  "_id": {
+    "$oid": "68b911209c02aeb86cfefd23"
+  },
+  "tests": [
+    "68b80c368f8d7389e5e59d87"
+  ],
+  "type": "mcq",
+  "questionText": "Which operator is used to compare object references?",
+  "options": [
+    "==",
+    "equals()",
+    "compareTo()",
+    "compare()"
+  ],
+  "correctAnswer": "==",
+  "explanation": "== checks if two references point to the same object.",
+  "category": "Java Core",
+  "difficulty": "medium",
+  "marks": 1,
+  "isActive": true,
+  "createdBy": "68b7ffa025ccbc2f7af20c49"
+},
+{
+  "_id": {
+    "$oid": "68b911209c02aeb86cfefd24"
+  },
+  "tests": [
+    "68b80c368f8d7389e5e59d87"
+  ],
+  "type": "mcq",
+  "questionText": "Which method compares the contents of two strings?",
+  "options": [
+    "equals()",
+    "==",
+    "compare()",
+    "hashCode()"
+  ],
+  "correctAnswer": "equals()",
+  "explanation": "equals() compares the content of two strings for equality.",
+  "category": "Java Core",
+  "difficulty": "easy",
+  "marks": 1,
+  "isActive": true,
+  "createdBy": "68b7ffa025ccbc2f7af20c49"
+},
+{
+  "_id": {
+    "$oid": "68b911209c02aeb86cfefd25"
+  },
+  "tests": [
+    "68b80c368f8d7389e5e59d87"
+  ],
+  "type": "mcq",
+  "questionText": "What happens if a constructor throws an exception?",
+  "options": [
+    "Object is still created",
+    "Object creation fails",
+    "Compiler warning",
+    "Exception ignored"
+  ],
+  "correctAnswer": "Object creation fails",
+  "explanation": "If a constructor throws an exception, the object is not created.",
+  "category": "Exception Handling",
+  "difficulty": "medium",
+  "marks": 1,
+  "isActive": true,
+  "createdBy": "68b7ffa025ccbc2f7af20c49"
+},
+{
+  "_id": {
+    "$oid": "68b911209c02aeb86cfefd26"
+  },
+  "tests": [
+    "68b80c368f8d7389e5e59d87"
+  ],
+  "type": "mcq",
+  "questionText": "What is the return type of constructors?",
+  "options": [
+    "void",
+    "Object",
+    "No return type",
+    "Class type"
+  ],
+  "correctAnswer": "No return type",
+  "explanation": "Constructors do not have any return type, not even void.",
+  "category": "Java Core",
+  "difficulty": "easy",
+  "marks": 1,
+  "isActive": true,
+  "createdBy": "68b7ffa025ccbc2f7af20c49"
+},
+{
+  "_id": {
+    "$oid": "68b911209c02aeb86cfefd27"
+  },
+  "tests": [
+    "68b80c368f8d7389e5e59d87"
+  ],
+  "type": "mcq",
+  "questionText": "Which keyword refers to the immediate parent class object?",
+  "options": [
+    "this",
+    "super",
+    "parent",
+    "base"
+  ],
+  "correctAnswer": "super",
+  "explanation": "super refers to the immediate parent class object.",
+  "category": "OOP",
+  "difficulty": "easy",
+  "marks": 1,
+  "isActive": true,
+  "createdBy": "68b7ffa025ccbc2f7af20c49"
+},
+{
+  "_id": {
+    "$oid": "68b911209c02aeb86cfefd28"
+  },
+  "tests": [
+    "68b80c368f8d7389e5e59d87"
+  ],
+  "type": "mcq",
+  "questionText": "Which modifier makes a variable accessible to all classes?",
+  "options": [
+    "protected",
+    "private",
+    "public",
+    "default"
+  ],
+  "correctAnswer": "public",
+  "explanation": "public variables are accessible from anywhere.",
+  "category": "Java Core",
+  "difficulty": "easy",
+  "marks": 1,
+  "isActive": true,
+  "createdBy": "68b7ffa025ccbc2f7af20c49"
+},
+{
+  "_id": {
+    "$oid": "68b911209c02aeb86cfefd29"
+  },
+  "tests": [
+    "68b80c368f8d7389e5e59d87"
+  ],
+  "type": "mcq",
+  "questionText": "Which collection does not allow duplicates?",
+  "options": [
+    "List",
+    "Set",
+    "Map",
+    "Queue"
+  ],
+  "correctAnswer": "Set",
+  "explanation": "Set does not allow duplicate elements.",
+  "category": "Java Core",
+  "difficulty": "medium",
+  "marks": 1,
+  "isActive": true,
+  "createdBy": "68b7ffa025ccbc2f7af20c49"
+},
+{
+  "_id": {
+    "$oid": "68b911209c02aeb86cfefd2a"
+  },
+  "tests": [
+    "68b80c368f8d7389e5e59d87"
+  ],
+  "type": "mcq",
+  "questionText": "Which package contains the ArrayList class?",
+  "options": [
+    "java.util",
+    "java.lang",
+    "java.io",
+    "java.sql"
+  ],
+  "correctAnswer": "java.util",
+  "explanation": "ArrayList class is part of the java.util package.",
+  "category": "Java Core",
+  "difficulty": "easy",
+  "marks": 1,
+  "isActive": true,
+  "createdBy": "68b7ffa025ccbc2f7af20c49"
+},
+{
+  "_id": {
+    "$oid": "68b911209c02aeb86cfefd2b"
+  },
+  "tests": [
+    "68b80c368f8d7389e5e59d87"
+  ],
+  "type": "mcq",
+  "questionText": "Which of these is not a primitive data type?",
+  "options": [
+    "int",
+    "float",
+    "Object",
+    "boolean"
+  ],
+  "correctAnswer": "Object",
+  "explanation": "Object is not a primitive data type; it is a class reference.",
+  "category": "Java Core",
+  "difficulty": "easy",
+  "marks": 1,
+  "isActive": true,
+  "createdBy": "68b7ffa025ccbc2f7af20c49"
+},
+{
+  "_id": {
+    "$oid": "68b911609c02aeb86cfefd2d"
+  },
+  "tests": [
+    "68b80c368f8d7389e5e59d87"
+  ],
+  "type": "mcq",
+  "questionText": "What will happen if you divide an integer by zero in Java?",
+  "options": [
+    "Infinity",
+    "NaN",
+    "ArithmeticException",
+    "ZeroDivisionError"
+  ],
+  "correctAnswer": "ArithmeticException",
+  "explanation": "Division by zero for integers throws ArithmeticException at runtime.",
+  "category": "Exception Handling",
+  "difficulty": "medium",
+  "marks": 1,
+  "isActive": true,
+  "createdBy": "68b7ffa025ccbc2f7af20c49"
+},
+{
+  "_id": {
+    "$oid": "68b911609c02aeb86cfefd2e"
+  },
+  "tests": [
+    "68b80c368f8d7389e5e59d87"
+  ],
+  "type": "mcq",
+  "questionText": "Which statement is true about interfaces in Java?",
+  "options": [
+    "Interfaces can have constructors",
+    "Interfaces can have instance fields",
+    "Interfaces support multiple inheritance",
+    "Interfaces cannot be extended"
+  ],
+  "correctAnswer": "Interfaces support multiple inheritance",
+  "explanation": "A class can implement multiple interfaces, thus supporting multiple inheritance of type.",
+  "category": "OOP",
+  "difficulty": "medium",
+  "marks": 1,
+  "isActive": true,
+  "createdBy": "68b7ffa025ccbc2f7af20c49"
+},
+{
+  "_id": {
+    "$oid": "68b911609c02aeb86cfefd2f"
+  },
+  "tests": [
+    "68b80c368f8d7389e5e59d87"
+  ],
+  "type": "mcq",
+  "questionText": "Which of these is checked at compile time?",
+  "options": [
+    "NullPointerException",
+    "ArithmeticException",
+    "IOException",
+    "ArrayIndexOutOfBoundsException"
+  ],
+  "correctAnswer": "IOException",
+  "explanation": "Checked exceptions like IOException must be handled or declared at compile time.",
+  "category": "Exception Handling",
+  "difficulty": "medium",
+  "marks": 1,
+  "isActive": true,
+  "createdBy": "68b7ffa025ccbc2f7af20c49"
+},
+{
+  "_id": {
+    "$oid": "68b911609c02aeb86cfefd30"
+  },
+  "tests": [
+    "68b80c368f8d7389e5e59d87"
+  ],
+  "type": "mcq",
+  "questionText": "Which collection provides key-value mapping?",
+  "options": [
+    "List",
+    "Set",
+    "Queue",
+    "Map"
+  ],
+  "correctAnswer": "Map",
+  "explanation": "Map provides key-value pair storage with unique keys.",
+  "category": "Java Core",
+  "difficulty": "easy",
+  "marks": 1,
+  "isActive": true,
+  "createdBy": "68b7ffa025ccbc2f7af20c49"
+},
+{
+  "_id": {
+    "$oid": "68b911609c02aeb86cfefd31"
+  },
+  "tests": [
+    "68b80c368f8d7389e5e59d87"
+  ],
+  "type": "mcq",
+  "questionText": "Which keyword prevents a class from being inherited?",
+  "options": [
+    "private",
+    "sealed",
+    "final",
+    "abstract"
+  ],
+  "correctAnswer": "final",
+  "explanation": "Declaring a class final prevents other classes from extending it.",
+  "category": "OOP",
+  "difficulty": "easy",
+  "marks": 1,
+  "isActive": true,
+  "createdBy": "68b7ffa025ccbc2f7af20c49"
+},
+{
+  "_id": {
+    "$oid": "68b911609c02aeb86cfefd32"
+  },
+  "tests": [
+    "68b80c368f8d7389e5e59d87"
+  ],
+  "type": "mcq",
+  "questionText": "Which block is always executed whether or not an exception is thrown?",
+  "options": [
+    "try",
+    "catch",
+    "finally",
+    "throw"
+  ],
+  "correctAnswer": "finally",
+  "explanation": "finally block is always executed, commonly used for cleanup code.",
+  "category": "Exception Handling",
+  "difficulty": "easy",
+  "marks": 1,
+  "isActive": true,
+  "createdBy": "68b7ffa025ccbc2f7af20c49"
+},
+{
+  "_id": {
+    "$oid": "68b911609c02aeb86cfefd33"
+  },
+  "tests": [
+    "68b80c368f8d7389e5e59d87"
+  ],
+  "type": "mcq",
+  "questionText": "What is the default value of an uninitialized boolean field in a class?",
+  "options": [
+    "true",
+    "false",
+    "null",
+    "0"
+  ],
+  "correctAnswer": "false",
+  "explanation": "Uninitialized boolean fields default to false in Java.",
+  "category": "Java Core",
+  "difficulty": "easy",
+  "marks": 1,
+  "isActive": true,
+  "createdBy": "68b7ffa025ccbc2f7af20c49"
+},
+{
+  "_id": {
+    "$oid": "68b911609c02aeb86cfefd34"
+  },
+  "tests": [
+    "68b80c368f8d7389e5e59d87"
+  ],
+  "type": "mcq",
+  "questionText": "Which operator is used for short-circuit AND?",
+  "options": [
+    "&",
+    "&&",
+    "|",
+    "||"
+  ],
+  "correctAnswer": "&&",
+  "explanation": "&& is the short-circuit AND operator; it evaluates the second operand only if necessary.",
+  "category": "Java Core",
+  "difficulty": "easy",
+  "marks": 1,
+  "isActive": true,
+  "createdBy": "68b7ffa025ccbc2f7af20c49"
+},
+{
+  "_id": {
+    "$oid": "68b911609c02aeb86cfefd35"
+  },
+  "tests": [
+    "68b80c368f8d7389e5e59d87"
+  ],
+  "type": "mcq",
+  "questionText": "Which is true about abstract classes?",
+  "options": [
+    "They cannot have fields",
+    "They cannot have implemented methods",
+    "They can have both abstract and concrete methods",
+    "They must implement all methods of Object"
+  ],
+  "correctAnswer": "They can have both abstract and concrete methods",
+  "explanation": "Abstract classes can include both abstract methods and fully implemented methods.",
+  "category": "OOP",
+  "difficulty": "medium",
+  "marks": 1,
+  "isActive": true,
+  "createdBy": "68b7ffa025ccbc2f7af20c49"
+},
+{
+  "_id": {
+    "$oid": "68b911609c02aeb86cfefd36"
+  },
+  "tests": [
+    "68b80c368f8d7389e5e59d87"
+  ],
+  "type": "mcq",
+  "questionText": "Which keyword allows a method to be accessed without creating an instance?",
+  "options": [
+    "static",
+    "final",
+    "abstract",
+    "private"
+  ],
+  "correctAnswer": "static",
+  "explanation": "Static methods can be called on the class itself without creating an instance.",
+  "category": "Java Core",
+  "difficulty": "easy",
+  "marks": 1,
+  "isActive": true,
+  "createdBy": "68b7ffa025ccbc2f7af20c49"
+},
+{
+  "_id": {
+    "$oid": "68b911609c02aeb86cfefd37"
+  },
+  "tests": [
+    "68b80c368f8d7389e5e59d87"
+  ],
+  "type": "mcq",
+  "questionText": "What happens when an exception is not caught in Java?",
+  "options": [
+    "The program continues",
+    "The program terminates",
+    "The JVM restarts",
+    "Nothing"
+  ],
+  "correctAnswer": "The program terminates",
+  "explanation": "If an exception is not caught, it propagates up and eventually terminates the program.",
+  "category": "Exception Handling",
+  "difficulty": "medium",
+  "marks": 1,
+  "isActive": true,
+  "createdBy": "68b7ffa025ccbc2f7af20c49"
+},
+{
+  "_id": {
+    "$oid": "68b911609c02aeb86cfefd38"
+  },
+  "tests": [
+    "68b80c368f8d7389e5e59d87"
+  ],
+  "type": "mcq",
+  "questionText": "Which keyword indicates a method cannot be overridden?",
+  "options": [
+    "static",
+    "abstract",
+    "final",
+    "synchronized"
+  ],
+  "correctAnswer": "final",
+  "explanation": "Declaring a method final prevents it from being overridden in subclasses.",
+  "category": "OOP",
+  "difficulty": "easy",
+  "marks": 1,
+  "isActive": true,
+  "createdBy": "68b7ffa025ccbc2f7af20c49"
+},
+{
+  "_id": {
+    "$oid": "68b911609c02aeb86cfefd39"
+  },
+  "tests": [
+    "68b80c368f8d7389e5e59d87"
+  ],
+  "type": "mcq",
+  "questionText": "Which exception is thrown when array index is out of range?",
+  "options": [
+    "ArrayStoreException",
+    "IndexOutOfBoundsException",
+    "ArrayIndexOutOfBoundsException",
+    "ClassCastException"
+  ],
+  "correctAnswer": "ArrayIndexOutOfBoundsException",
+  "explanation": "Accessing an array element outside its bounds throws ArrayIndexOutOfBoundsException.",
+  "category": "Exception Handling",
+  "difficulty": "easy",
+  "marks": 1,
+  "isActive": true,
+  "createdBy": "68b7ffa025ccbc2f7af20c49"
+},
+{
+  "_id": {
+    "$oid": "68b9163b9c02aeb86cfefd3b"
+  },
+  "tests": [
+    "68b80c368f8d7389e5e59d87"
+  ],
+  "type": "mcq",
+  "questionText": "Which keyword is used to explicitly throw an exception in Java?",
+  "options": [
+    "throws",
+    "throw",
+    "raise",
+    "signal"
+  ],
+  "correctAnswer": "throw",
+  "explanation": "The throw keyword is used to explicitly throw an exception instance.",
+  "category": "Exception Handling",
+  "difficulty": "easy",
+  "marks": 1,
+  "isActive": true,
+  "createdBy": "68b7ffa025ccbc2f7af20c49"
+},
+{
+  "_id": {
+    "$oid": "68b9163b9c02aeb86cfefd3c"
+  },
+  "tests": [
+    "68b80c368f8d7389e5e59d87"
+  ],
+  "type": "mcq",
+  "questionText": "Which interface does every collection implement indirectly in Java?",
+  "options": [
+    "Cloneable",
+    "Serializable",
+    "Iterable",
+    "Comparable"
+  ],
+  "correctAnswer": "Iterable",
+  "explanation": "Every collection in Java implements Iterable to support enhanced for-loops.",
+  "category": "Java Core",
+  "difficulty": "medium",
+  "marks": 1,
+  "isActive": true,
+  "createdBy": "68b7ffa025ccbc2f7af20c49"
+},
+{
+  "_id": {
+    "$oid": "68b9163b9c02aeb86cfefd3d"
+  },
+  "tests": [
+    "68b80c368f8d7389e5e59d87"
+  ],
+  "type": "mcq",
+  "questionText": "Which concept allows the same method name but different parameter lists?",
+  "options": [
+    "Overriding",
+    "Overloading",
+    "Shadowing",
+    "Hiding"
+  ],
+  "correctAnswer": "Overloading",
+  "explanation": "Method overloading is compile-time polymorphism using the same name with different signatures.",
+  "category": "OOP",
+  "difficulty": "easy",
+  "marks": 1,
+  "isActive": true,
+  "createdBy": "68b7ffa025ccbc2f7af20c49"
+},
+{
+  "_id": {
+    "$oid": "68b9163b9c02aeb86cfefd3e"
+  },
+  "tests": [
+    "68b80c368f8d7389e5e59d87"
+  ],
+  "type": "mcq",
+  "questionText": "Which package contains the Collection Framework?",
+  "options": [
+    "java.io",
+    "java.util",
+    "java.lang",
+    "java.sql"
+  ],
+  "correctAnswer": "java.util",
+  "explanation": "The Java Collection Framework is in the java.util package.",
+  "category": "Java Core",
+  "difficulty": "easy",
+  "marks": 1,
+  "isActive": true,
+  "createdBy": "68b7ffa025ccbc2f7af20c49"
+},
+{
+  "_id": {
+    "$oid": "68b9163b9c02aeb86cfefd3f"
+  },
+  "tests": [
+    "68b80c368f8d7389e5e59d87"
+  ],
+  "type": "mcq",
+  "questionText": "What is printed when you call toString() on an object without overriding it?",
+  "options": [
+    "Object content",
+    "ClassName@HashCode",
+    "null",
+    "Error"
+  ],
+  "correctAnswer": "ClassName@HashCode",
+  "explanation": "Default toString() prints class name followed by @ and hex hash code.",
+  "category": "Java Core",
+  "difficulty": "medium",
+  "marks": 1,
+  "isActive": true,
+  "createdBy": "68b7ffa025ccbc2f7af20c49"
+},
+{
+  "_id": {
+    "$oid": "68b9163b9c02aeb86cfefd40"
+  },
+  "tests": [
+    "68b80c368f8d7389e5e59d87"
+  ],
+  "type": "mcq",
+  "questionText": "Which keyword is used in a method declaration to indicate it might throw an exception?",
+  "options": [
+    "throw",
+    "throws",
+    "catch",
+    "finally"
+  ],
+  "correctAnswer": "throws",
+  "explanation": "The throws keyword declares the exceptions a method may propagate.",
+  "category": "Exception Handling",
+  "difficulty": "easy",
+  "marks": 1,
+  "isActive": true,
+  "createdBy": "68b7ffa025ccbc2f7af20c49"
+},
+{
+  "_id": {
+    "$oid": "68b9163b9c02aeb86cfefd41"
+  },
+  "tests": [
+    "68b80c368f8d7389e5e59d87"
+  ],
+  "type": "mcq",
+  "questionText": "Which concept allows a subclass to provide a specific implementation of a method already defined?",
+  "options": [
+    "Overloading",
+    "Overriding",
+    "Shadowing",
+    "Hiding"
+  ],
+  "correctAnswer": "Overriding",
+  "explanation": "Method overriding provides a new implementation in a subclass for a superclass method.",
+  "category": "OOP",
+  "difficulty": "easy",
+  "marks": 1,
+  "isActive": true,
+  "createdBy": "68b7ffa025ccbc2f7af20c49"
+},
+{
+  "_id": {
+    "$oid": "68b9163b9c02aeb86cfefd42"
+  },
+  "tests": [
+    "68b80c368f8d7389e5e59d87"
+  ],
+  "type": "mcq",
+  "questionText": "Which exception is a subclass of RuntimeException?",
+  "options": [
+    "IOException",
+    "SQLException",
+    "NullPointerException",
+    "FileNotFoundException"
+  ],
+  "correctAnswer": "NullPointerException",
+  "explanation": "NullPointerException is an unchecked exception derived from RuntimeException.",
+  "category": "Exception Handling",
+  "difficulty": "medium",
+  "marks": 1,
+  "isActive": true,
+  "createdBy": "68b7ffa025ccbc2f7af20c49"
+},
+{
+  "_id": {
+    "$oid": "68b9163b9c02aeb86cfefd43"
+  },
+  "tests": [
+    "68b80c368f8d7389e5e59d87"
+  ],
+  "type": "mcq",
+  "questionText": "Which operator is used for object reference comparison?",
+  "options": [
+    "==",
+    "equals()",
+    "!=",
+    "compareTo()"
+  ],
+  "correctAnswer": "==",
+  "explanation": "== compares whether two references point to the same object in memory.",
+  "category": "Java Core",
+  "difficulty": "medium",
+  "marks": 1,
+  "isActive": true,
+  "createdBy": "68b7ffa025ccbc2f7af20c49"
+},
+{
+  "_id": {
+    "$oid": "68b9163b9c02aeb86cfefd44"
+  },
+  "tests": [
+    "68b80c368f8d7389e5e59d87"
+  ],
+  "type": "mcq",
+  "questionText": "Which keyword is used to inherit a class in Java?",
+  "options": [
+    "extend",
+    "extends",
+    "inherit",
+    "implement"
+  ],
+  "correctAnswer": "extends",
+  "explanation": "The extends keyword is used to inherit from a superclass.",
+  "category": "OOP",
+  "difficulty": "easy",
+  "marks": 1,
+  "isActive": true,
+  "createdBy": "68b7ffa025ccbc2f7af20c49"
+},
+{
+  "_id": {
+    "$oid": "68b916d59c02aeb86cfefd46"
+  },
+  "tests": [
+    "68b80c368f8d7389e5e59d87"
+  ],
+  "type": "mcq",
+  "questionText": "Which Java feature allows one interface to inherit another?",
+  "options": [
+    "extends",
+    "implements",
+    "inherits",
+    "super"
+  ],
+  "correctAnswer": "extends",
+  "explanation": "Interfaces can extend other interfaces using the extends keyword.",
+  "category": "OOP",
+  "difficulty": "medium",
+  "marks": 1,
+  "isActive": true,
+  "createdBy": "68b7ffa025ccbc2f7af20c49"
+},
+{
+  "_id": {
+    "$oid": "68b916d59c02aeb86cfefd47"
+  },
+  "tests": [
+    "68b80c368f8d7389e5e59d87"
+  ],
+  "type": "mcq",
+  "questionText": "What happens if a constructor has a return type?",
+  "options": [
+    "Compile error",
+    "Runtime error",
+    "Ignored",
+    "Constructor acts as a normal method"
+  ],
+  "correctAnswer": "Constructor acts as a normal method",
+  "explanation": "If a constructor has a return type, it's treated as a normal method, not a constructor.",
+  "category": "Java Core",
+  "difficulty": "medium",
+  "marks": 1,
+  "isActive": true,
+  "createdBy": "68b7ffa025ccbc2f7af20c49"
+},
+{
+  "_id": {
+    "$oid": "68b916d59c02aeb86cfefd48"
+  },
+  "tests": [
+    "68b80c368f8d7389e5e59d87"
+  ],
+  "type": "mcq",
+  "questionText": "Which of these is not a wrapper class in Java?",
+  "options": [
+    "Integer",
+    "Character",
+    "String",
+    "Boolean"
+  ],
+  "correctAnswer": "String",
+  "explanation": "String is not a wrapper class; it is a separate class for text handling.",
+  "category": "Java Core",
+  "difficulty": "easy",
+  "marks": 1,
+  "isActive": true,
+  "createdBy": "68b7ffa025ccbc2f7af20c49"
+},
+{
+  "_id": {
+    "$oid": "68b916d59c02aeb86cfefd49"
+  },
+  "tests": [
+    "68b80c368f8d7389e5e59d87"
+  ],
+  "type": "mcq",
+  "questionText": "What is the default value of a local variable in Java?",
+  "options": [
+    "0",
+    "null",
+    "Depends on type",
+    "No default value"
+  ],
+  "correctAnswer": "No default value",
+  "explanation": "Local variables must be initialized before use; they have no default value.",
+  "category": "Java Core",
+  "difficulty": "medium",
+  "marks": 1,
+  "isActive": true,
+  "createdBy": "68b7ffa025ccbc2f7af20c49"
+},
+{
+  "_id": {
+    "$oid": "68b916d59c02aeb86cfefd4a"
+  },
+  "tests": [
+    "68b80c368f8d7389e5e59d87"
+  ],
+  "type": "mcq",
+  "questionText": "Which block executes regardless of whether an exception occurs?",
+  "options": [
+    "try",
+    "catch",
+    "finally",
+    "throw"
+  ],
+  "correctAnswer": "finally",
+  "explanation": "finally block always executes after try/catch, even if exceptions occur.",
+  "category": "Exception Handling",
+  "difficulty": "easy",
+  "marks": 1,
+  "isActive": true,
+  "createdBy": "68b7ffa025ccbc2f7af20c49"
+},
+{
+  "_id": {
+    "$oid": "68b916d59c02aeb86cfefd4b"
+  },
+  "tests": [
+    "68b80c368f8d7389e5e59d87"
+  ],
+  "type": "mcq",
+  "questionText": "Which keyword prevents a method from being overridden?",
+  "options": [
+    "private",
+    "protected",
+    "final",
+    "static"
+  ],
+  "correctAnswer": "final",
+  "explanation": "final methods cannot be overridden by subclasses.",
+  "category": "OOP",
+  "difficulty": "easy",
+  "marks": 1,
+  "isActive": true,
+  "createdBy": "68b7ffa025ccbc2f7af20c49"
+},
+{
+  "_id": {
+    "$oid": "68b916d59c02aeb86cfefd4c"
+  },
+  "tests": [
+    "68b80c368f8d7389e5e59d87"
+  ],
+  "type": "mcq",
+  "questionText": "Which is true about abstract classes?",
+  "options": [
+    "Cannot have constructors",
+    "Cannot have fields",
+    "Cannot be instantiated",
+    "Cannot have methods"
+  ],
+  "correctAnswer": "Cannot be instantiated",
+  "explanation": "Abstract classes can have fields and constructors, but cannot be instantiated directly.",
+  "category": "OOP",
+  "difficulty": "medium",
+  "marks": 1,
+  "isActive": true,
+  "createdBy": "68b7ffa025ccbc2f7af20c49"
+},
+{
+  "_id": {
+    "$oid": "68b916d59c02aeb86cfefd4d"
+  },
+  "tests": [
+    "68b80c368f8d7389e5e59d87"
+  ],
+  "type": "mcq",
+  "questionText": "What is printed: System.out.println(10 + 20 + \"Java\");",
+  "options": [
+    "Java30",
+    "30Java",
+    "1020Java",
+    "Java1020"
+  ],
+  "correctAnswer": "30Java",
+  "explanation": "Integer addition happens first (10+20=30), then concatenation with \"Java\".",
+  "category": "Java Core",
+  "difficulty": "medium",
+  "marks": 1,
+  "isActive": true,
+  "createdBy": "68b7ffa025ccbc2f7af20c49"
+},
+{
+  "_id": {
+    "$oid": "68b916d59c02aeb86cfefd4e"
+  },
+  "tests": [
+    "68b80c368f8d7389e5e59d87"
+  ],
+  "type": "mcq",
+  "questionText": "Which method is called by JVM to start a Java program?",
+  "options": [
+    "start()",
+    "main()",
+    "run()",
+    "execute()"
+  ],
+  "correctAnswer": "main()",
+  "explanation": "JVM looks for main() as the entry point of any Java application.",
+  "category": "Java Core",
+  "difficulty": "easy",
+  "marks": 1,
+  "isActive": true,
+  "createdBy": "68b7ffa025ccbc2f7af20c49"
+},
+{
+  "_id": {
+    "$oid": "68b916d59c02aeb86cfefd4f"
+  },
+  "tests": [
+    "68b80c368f8d7389e5e59d87"
+  ],
+  "type": "mcq",
+  "questionText": "What is the parent class of all exceptions?",
+  "options": [
+    "Throwable",
+    "Error",
+    "Exception",
+    "RuntimeException"
+  ],
+  "correctAnswer": "Throwable",
+  "explanation": "Throwable is the superclass of both Exception and Error classes.",
+  "category": "Exception Handling",
+  "difficulty": "medium",
+  "marks": 1,
+  "isActive": true,
+  "createdBy": "68b7ffa025ccbc2f7af20c49"
+},
+{
+  "_id": {
+    "$oid": "68b917069c02aeb86cfefd51"
+  },
+  "tests": [
+    "68b80c368f8d7389e5e59d87"
+  ],
+  "type": "mcq",
+  "questionText": "Which of these is not a type of inheritance in Java?",
+  "options": [
+    "Single",
+    "Multiple via classes",
+    "Hierarchical",
+    "Hybrid via interfaces"
+  ],
+  "correctAnswer": "Multiple via classes",
+  "explanation": "Java does not support multiple inheritance through classes to avoid ambiguity.",
+  "category": "OOP",
+  "difficulty": "medium",
+  "marks": 1,
+  "isActive": true,
+  "createdBy": "68b7ffa025ccbc2f7af20c49"
+},
+{
+  "_id": {
+    "$oid": "68b917069c02aeb86cfefd52"
+  },
+  "tests": [
+    "68b80c368f8d7389e5e59d87"
+  ],
+  "type": "mcq",
+  "questionText": "What is printed: System.out.println('A' + 1);",
+  "options": [
+    "A1",
+    "66",
+    "B",
+    "Error"
+  ],
+  "correctAnswer": "66",
+  "explanation": "'A' is a char (65 in ASCII). Adding 1 results in 66 (an int).",
+  "category": "Java Core",
+  "difficulty": "medium",
+  "marks": 1,
+  "isActive": true,
+  "createdBy": "68b7ffa025ccbc2f7af20c49"
+},
+{
+  "_id": {
+    "$oid": "68b917069c02aeb86cfefd53"
+  },
+  "tests": [
+    "68b80c368f8d7389e5e59d87"
+  ],
+  "type": "mcq",
+  "questionText": "Which exception is thrown when dividing by zero in Java (integer division)?",
+  "options": [
+    "NumberFormatException",
+    "ArithmeticException",
+    "NullPointerException",
+    "IllegalArgumentException"
+  ],
+  "correctAnswer": "ArithmeticException",
+  "explanation": "Division by zero for integers causes ArithmeticException.",
+  "category": "Exception Handling",
+  "difficulty": "easy",
+  "marks": 1,
+  "isActive": true,
+  "createdBy": "68b7ffa025ccbc2f7af20c49"
+},
+{
+  "_id": {
+    "$oid": "68b917069c02aeb86cfefd54"
+  },
+  "tests": [
+    "68b80c368f8d7389e5e59d87"
+  ],
+  "type": "mcq",
+  "questionText": "Which of these can be used to stop a thread in Java (not recommended now)?",
+  "options": [
+    "stop()",
+    "exit()",
+    "kill()",
+    "terminate()"
+  ],
+  "correctAnswer": "stop()",
+  "explanation": "Thread.stop() is deprecated but can stop a thread abruptly.",
+  "category": "Java Core",
+  "difficulty": "hard",
+  "marks": 1,
+  "isActive": true,
+  "createdBy": "68b7ffa025ccbc2f7af20c49"
+},
+{
+  "_id": {
+    "$oid": "68b917069c02aeb86cfefd55"
+  },
+  "tests": [
+    "68b80c368f8d7389e5e59d87"
+  ],
+  "type": "mcq",
+  "questionText": "Which keyword is used to inherit a class in Java?",
+  "options": [
+    "inherits",
+    "extends",
+    "implements",
+    "instanceof"
+  ],
+  "correctAnswer": "extends",
+  "explanation": "Classes inherit from other classes using extends.",
+  "category": "OOP",
+  "difficulty": "easy",
+  "marks": 1,
+  "isActive": true,
+  "createdBy": "68b7ffa025ccbc2f7af20c49"
+},
+{
+  "_id": {
+    "$oid": "68b917069c02aeb86cfefd56"
+  },
+  "tests": [
+    "68b80c368f8d7389e5e59d87"
+  ],
+  "type": "mcq",
+  "questionText": "How to declare a constant in Java?",
+  "options": [
+    "const int A=10;",
+    "int A=const 10;",
+    "final int A=10;",
+    "int const A=10;"
+  ],
+  "correctAnswer": "final int A=10;",
+  "explanation": "Use final keyword to declare constants in Java.",
+  "category": "Java Core",
+  "difficulty": "easy",
+  "marks": 1,
+  "isActive": true,
+  "createdBy": "68b7ffa025ccbc2f7af20c49"
+},
+{
+  "_id": {
+    "$oid": "68b917069c02aeb86cfefd57"
+  },
+  "tests": [
+    "68b80c368f8d7389e5e59d87"
+  ],
+  "type": "mcq",
+  "questionText": "Which is true about constructors?",
+  "options": [
+    "They have a return type",
+    "They must be static",
+    "They initialize objects",
+    "They can be abstract"
+  ],
+  "correctAnswer": "They initialize objects",
+  "explanation": "Constructors initialize new objects when created.",
+  "category": "OOP",
+  "difficulty": "medium",
+  "marks": 1,
+  "isActive": true,
+  "createdBy": "68b7ffa025ccbc2f7af20c49"
+},
+{
+  "_id": {
+    "$oid": "68b917069c02aeb86cfefd58"
+  },
+  "tests": [
+    "68b80c368f8d7389e5e59d87"
+  ],
+  "type": "mcq",
+  "questionText": "What is printed: System.out.println(true + \"false\");",
+  "options": [
+    "truefalse",
+    "1false",
+    "true false",
+    "Error"
+  ],
+  "correctAnswer": "truefalse",
+  "explanation": "true is converted to string and concatenated with \"false\".",
+  "category": "Java Core",
+  "difficulty": "easy",
+  "marks": 1,
+  "isActive": true,
+  "createdBy": "68b7ffa025ccbc2f7af20c49"
+},
+{
+  "_id": {
+    "$oid": "68b917069c02aeb86cfefd59"
+  },
+  "tests": [
+    "68b80c368f8d7389e5e59d87"
+  ],
+  "type": "mcq",
+  "questionText": "Which of these is unchecked exception?",
+  "options": [
+    "IOException",
+    "SQLException",
+    "ArithmeticException",
+    "FileNotFoundException"
+  ],
+  "correctAnswer": "ArithmeticException",
+  "explanation": "ArithmeticException is a runtime (unchecked) exception.",
+  "category": "Exception Handling",
+  "difficulty": "medium",
+  "marks": 1,
+  "isActive": true,
+  "createdBy": "68b7ffa025ccbc2f7af20c49"
+},
+{
+  "_id": {
+    "$oid": "68b917069c02aeb86cfefd5a"
+  },
+  "tests": [
+    "68b80c368f8d7389e5e59d87"
+  ],
+  "type": "mcq",
+  "questionText": "What is the superclass of String?",
+  "options": [
+    "Object",
+    "CharSequence",
+    "StringBuilder",
+    "None"
+  ],
+  "correctAnswer": "Object",
+  "explanation": "All classes inherit from Object, including String.",
+  "category": "Java Core",
+  "difficulty": "easy",
+  "marks": 1,
+  "isActive": true,
+  "createdBy": "68b7ffa025ccbc2f7af20c49"
+},
+{
+  "_id": {
+    "$oid": "68b917069c02aeb86cfefd5b"
+  },
+  "tests": [
+    "68b80c368f8d7389e5e59d87"
+  ],
+  "type": "mcq",
+  "questionText": "Which operator is used for object reference comparison?",
+  "options": [
+    "==",
+    "equals()",
+    "!=",
+    "compareTo()"
+  ],
+  "correctAnswer": "==",
+  "explanation": "== checks if two references point to the same object in memory.",
+  "category": "Java Core",
+  "difficulty": "medium",
+  "marks": 1,
+  "isActive": true,
+  "createdBy": "68b7ffa025ccbc2f7af20c49"
+},
+{
+  "_id": {
+    "$oid": "68b917069c02aeb86cfefd5c"
+  },
+  "tests": [
+    "68b80c368f8d7389e5e59d87"
+  ],
+  "type": "mcq",
+  "questionText": "Which modifier is not allowed for top-level classes?",
+  "options": [
+    "public",
+    "final",
+    "private",
+    "abstract"
+  ],
+  "correctAnswer": "private",
+  "explanation": "Top-level classes cannot be private; they can be public or default.",
+  "category": "Java Core",
+  "difficulty": "medium",
+  "marks": 1,
+  "isActive": true,
+  "createdBy": "68b7ffa025ccbc2f7af20c49"
+},
+{
+  "_id": {
+    "$oid": "68b917069c02aeb86cfefd5d"
+  },
+  "tests": [
+    "68b80c368f8d7389e5e59d87"
+  ],
+  "type": "mcq",
+  "questionText": "Which is true about method overloading?",
+  "options": [
+    "Return type must differ",
+    "Parameters must differ",
+    "Both must differ",
+    "Neither must differ"
+  ],
+  "correctAnswer": "Parameters must differ",
+  "explanation": "Overloaded methods must differ in parameter list, not just return type.",
+  "category": "OOP",
+  "difficulty": "medium",
+  "marks": 1,
+  "isActive": true,
+  "createdBy": "68b7ffa025ccbc2f7af20c49"
+},
+{
+  "_id": {
+    "$oid": "68b917069c02aeb86cfefd5e"
+  },
+  "tests": [
+    "68b80c368f8d7389e5e59d87"
+  ],
+  "type": "mcq",
+  "questionText": "Which keyword is used to call parent class constructor?",
+  "options": [
+    "this()",
+    "super()",
+    "parent()",
+    "base()"
+  ],
+  "correctAnswer": "super()",
+  "explanation": "super() is used to call the parent class constructor.",
+  "category": "OOP",
+  "difficulty": "easy",
+  "marks": 1,
+  "isActive": true,
+  "createdBy": "68b7ffa025ccbc2f7af20c49"
+},
+{
+  "_id": {
+    "$oid": "68b917069c02aeb86cfefd5f"
+  },
+  "tests": [
+    "68b80c368f8d7389e5e59d87"
+  ],
+  "type": "mcq",
+  "questionText": "Which exception occurs if you try to access array element beyond its size?",
+  "options": [
+    "ArrayIndexOutOfBoundsException",
+    "NullPointerException",
+    "IllegalArgumentException",
+    "NumberFormatException"
+  ],
+  "correctAnswer": "ArrayIndexOutOfBoundsException",
+  "explanation": "Trying to access an index outside array range causes ArrayIndexOutOfBoundsException.",
+  "category": "Exception Handling",
+  "difficulty": "easy",
+  "marks": 1,
+  "isActive": true,
+  "createdBy": "68b7ffa025ccbc2f7af20c49"
+}]
