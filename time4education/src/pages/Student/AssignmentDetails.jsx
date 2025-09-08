@@ -2,7 +2,7 @@
 import { useEffect, useMemo, useRef, useState, useCallback } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import axios from "@/api/axios";
-import { useFullscreen } from "@/context/FullscreenContext";
+import { useFullscreen } from "@/context/FullScreenContext";
 
 // -------- utils --------
 const shuffle = (arr) => {
