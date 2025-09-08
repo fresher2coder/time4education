@@ -15,24 +15,25 @@ const app = express();
 app.use(express.json());
 app.use(cookieParser());
 
-// Allow multiple frontend URLs (dev + production)
 const allowedOrigins = [
-  "http://localhost:5173", // local dev
-  "https://time4education.vercel.app/", // production frontend
+  "http://localhost:5173",
+  "https://time4education.vercel.app",
 ];
 
 app.use(
   cors({
     origin: function (origin, callback) {
-      // allow requests with no origin (like curl or Postman)
-      if (!origin) return callback(null, true);
-      if (allowedOrigins.indexOf(origin) === -1) {
-        const msg = "CORS policy does not allow this origin: " + origin;
-        return callback(new Error(msg), false);
+      if (!origin) return callback(null, true); // allow non-browser requests
+      const allowed = allowedOrigins.some((url) => origin.startsWith(url));
+      if (!allowed) {
+        return callback(
+          new Error("CORS policy does not allow: " + origin),
+          false
+        );
       }
       return callback(null, true);
     },
-    credentials: true, // allow cookies and auth headers
+    credentials: true,
   })
 );
 
