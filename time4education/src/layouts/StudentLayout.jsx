@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Outlet, useLocation } from "react-router-dom";
 import Sidebar from "./Sidebar";
 import Topbar from "./Topbar";
-import { useFullscreen } from "@/context/FullscreenContext";
+import { useFullscreen } from "@/context/FullScreenContext";
 
 const StudentLayout = () => {
   const [open, setOpen] = useState(false);
