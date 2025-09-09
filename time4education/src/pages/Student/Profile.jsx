@@ -1,6 +1,7 @@
 // src/pages/Student/Profile.jsx
 import React, { useEffect, useState } from "react";
 import axios from "@/api/axios";
+import { useAuth } from "@/context/AuthContext";
 
 const Profile = () => {
   const [profile, setProfile] = useState(null);

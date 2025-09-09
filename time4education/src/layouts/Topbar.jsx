@@ -3,6 +3,7 @@ import { Menu } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import axios from "@/api/axios";
 import TIME_LOGO from "@/assets/TIME_Logo_2.png";
+import { useAuth } from "@/context/AuthContext";
 
 const Topbar = ({ toggleDrawer }) => {
   const [menuOpen, setMenuOpen] = useState(false);
