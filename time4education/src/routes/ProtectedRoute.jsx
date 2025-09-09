@@ -1,42 +1,21 @@
-// src/routes/ProtectedRoute.jsx
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Navigate } from "react-router-dom";
-import axios from "@/api/axios";
+import { useAuth } from "@/context/AuthContext";
 
 const ProtectedRoute = ({ children, role }) => {
-  const [status, setStatus] = useState({
-    loading: true,
-    allowed: false,
-  });
+  const { user, loading } = useAuth();
 
-  useEffect(() => {
-    let isMounted = true;
+  if (loading) {
+    return <div className="p-4">Loading...</div>;
+  }
 
-    const checkAuth = async () => {
-      try {
-        const res = await axios.get("/auth/me", { withCredentials: true });
-        if (isMounted) {
-          if (role && res.data.role !== role) {
-            setStatus({ loading: false, allowed: false });
-          } else {
-            setStatus({ loading: false, allowed: true });
-          }
-        }
-      } catch (err) {
-        if (isMounted) setStatus({ loading: false, allowed: false });
-      }
-    };
+  if (!user) {
+    return <Navigate to="/login" replace />;
+  }
 
-    checkAuth();
-
-    return () => {
-      isMounted = false;
-    };
-  }, [role]);
-
-  if (status.loading) return <div className="p-4">Loading...</div>;
-
-  if (!status.allowed) return <Navigate to="/unauthorized" replace />;
+  if (role && user.role?.toLowerCase() !== role.toLowerCase()) {
+    return <Navigate to="/unauthorized" replace />;
+  }
 
   return children;
 };

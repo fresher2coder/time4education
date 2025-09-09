@@ -1,50 +1,46 @@
-import { createContext, useContext, useEffect, useState } from "react";
-import axios from "axios";
+import React, { createContext, useContext, useEffect, useState } from "react";
+import axios from "@/api/axios";
 
 const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
-  const [user, setUser] = useState(null); // user info
-  const [loading, setLoading] = useState(true); // while checking session
+  const [user, setUser] = useState(null);
+  const [loading, setLoading] = useState(true);
 
-  // 🔑 On mount: check if user already logged in
+  const fetchUser = async () => {
+    try {
+      const res = await axios.get("/auth/me", { withCredentials: true });
+      setUser(res.data);
+    } catch (err) {
+      // not logged in or session invalid
+      setUser(null);
+    } finally {
+      setLoading(false);
+    }
+  };
+
   useEffect(() => {
-    const fetchUser = async () => {
-      try {
-        const res = await axios.get("/api/auth/me", { withCredentials: true });
-        setUser(res.data);
-      } catch (err) {
-        setUser(null);
-      } finally {
-        setLoading(false);
-      }
-    };
     fetchUser();
   }, []);
 
-  // 🚀 Login
-  const login = async (email, password) => {
-    const res = await axios.post(
-      "/api/auth/login",
-      { email, password },
-      { withCredentials: true }
-    );
-    setUser(res.data.user);
-    return res.data.user;
+  const login = async (credentials) => {
+    const res = await axios.post("/auth/login", credentials, {
+      withCredentials: true,
+    });
+    await fetchUser(); // refresh user after login
+    return res;
   };
 
-  // 👋 Logout
   const logout = async () => {
-    await axios.post("/api/auth/logout", {}, { withCredentials: true });
+    await axios.post("/auth/logout", {}, { withCredentials: true });
     setUser(null);
   };
 
   return (
-    <AuthContext.Provider value={{ user, loading, login, logout }}>
+    <AuthContext.Provider value={{ user, loading, login, logout, setLoading }}>
       {children}
     </AuthContext.Provider>
   );
 };
 
-// 🪄 Hook for easy use
 export const useAuth = () => useContext(AuthContext);

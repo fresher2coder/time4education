@@ -4,6 +4,7 @@ import axios from "../../api/axios.js";
 
 const Login = () => {
   const navigate = useNavigate();
+  const { login } = useAuth();
 
   const [form, setForm] = useState({
     email: "",
@@ -42,11 +43,12 @@ const Login = () => {
         password: form.password,
       };
 
-      const res = await axios.post("/auth/login", payload);
+      // const res = await axios.post("/auth/login", payload);
+      const res = await login(payload);
 
       // store token/user data (adjust as per API)
-      localStorage.setItem("token", res.data.token);
-      localStorage.setItem("user", JSON.stringify(res.data.user));
+      // localStorage.setItem("token", res.data.token);
+      // localStorage.setItem("user", JSON.stringify(res.data.user));
 
       setSuccessMsg("Login successful! Redirecting...");
       setTimeout(() => navigate("/student/dashboard"), 1000);

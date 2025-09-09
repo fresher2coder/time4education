@@ -17,43 +17,49 @@ import Unauthorized from "../pages/Unauthorized";
 import AssignmentDetail from "@/pages/Student/AssignmentDetails";
 import TestCompleted from "@/pages/Student/TestCompleted";
 import { FullscreenProvider } from "@/context/FullScreenContext";
+import { AuthProvider } from "@/context/AuthContext";
 
 const AppRoutes = () => {
   return (
-    <FullscreenProvider>
-      <Router>
-        <Routes>
-          {/* public */}
-          <Route element={<GeneralLayout />}>
-            <Route index element={<Home />} />
-            <Route path="login" element={<Login />} />
-            <Route path="register" element={<Register />} />
-            <Route path="unauthorized" element={<Unauthorized />} />
-          </Route>
+    <AuthProvider>
+      <FullscreenProvider>
+        <Router>
+          <Routes>
+            {/* public */}
+            <Route element={<GeneralLayout />}>
+              <Route index element={<Home />} />
+              <Route path="login" element={<Login />} />
+              <Route path="register" element={<Register />} />
+              <Route path="unauthorized" element={<Unauthorized />} />
+            </Route>
 
-          {/* protected student area */}
+            {/* protected student area */}
 
-          <Route
-            element={
-              <ProtectedRoute role="student">
-                <StudentLayout />
-              </ProtectedRoute>
-            }
-          >
-            <Route path="student/dashboard" element={<Dashboard />} />
-            <Route path="student/profile" element={<Profile />} />
-            <Route path="student/tests" element={<Tests />} />
             <Route
-              path="student/tests/assignments/:id"
-              element={<AssignmentDetail />}
-            />
+              element={
+                <ProtectedRoute role="student">
+                  <StudentLayout />
+                </ProtectedRoute>
+              }
+            >
+              <Route path="student/dashboard" element={<Dashboard />} />
+              <Route path="student/profile" element={<Profile />} />
+              <Route path="student/tests" element={<Tests />} />
+              <Route
+                path="student/tests/assignments/:id"
+                element={<AssignmentDetail />}
+              />
 
-            <Route path="student/settings" element={<Settings />} />
-            <Route path="student/test/completed" element={<TestCompleted />} />
-          </Route>
-        </Routes>
-      </Router>
-    </FullscreenProvider>
+              <Route path="student/settings" element={<Settings />} />
+              <Route
+                path="student/test/completed"
+                element={<TestCompleted />}
+              />
+            </Route>
+          </Routes>
+        </Router>
+      </FullscreenProvider>
+    </AuthProvider>
   );
 };
 

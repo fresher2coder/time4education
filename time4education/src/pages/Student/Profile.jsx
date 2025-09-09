@@ -4,14 +4,15 @@ import axios from "@/api/axios";
 
 const Profile = () => {
   const [profile, setProfile] = useState(null);
-  const [loading, setLoading] = useState(true);
   const [errorMsg, setErrorMsg] = useState("");
+  const { user } = useAuth();
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchProfile = async () => {
       try {
-        const res = await axios.get("/auth/me");
-        setProfile(res.data);
+        // const res = await axios.get("/auth/me");
+        setProfile(user);
       } catch (err) {
         setErrorMsg(err.response?.data?.message || "Error fetching profile");
       } finally {

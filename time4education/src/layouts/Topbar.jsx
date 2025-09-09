@@ -5,23 +5,23 @@ import axios from "@/api/axios";
 import TIME_LOGO from "@/assets/TIME_Logo_2.png";
 
 const Topbar = ({ toggleDrawer }) => {
-  const [user, setUser] = useState(null);
   const [menuOpen, setMenuOpen] = useState(false);
   const navigate = useNavigate();
   const menuRef = useRef(null);
+  const { user, logout } = useAuth();
 
   // Fetch user
-  useEffect(() => {
-    const fetchUser = async () => {
-      try {
-        const res = await axios.get("/auth/me");
-        setUser(res.data);
-      } catch {
-        setUser(null);
-      }
-    };
-    fetchUser();
-  }, []);
+  // useEffect(() => {
+  //   const fetchUser = async () => {
+  //     try {
+  //       const res = await axios.get("/auth/me");
+  //       setUser(res.data);
+  //     } catch {
+  //       setUser(null);
+  //     }
+  //   };
+  //   fetchUser();
+  // }, []);
 
   // Click outside to close dropdown
   useEffect(() => {
@@ -36,7 +36,8 @@ const Topbar = ({ toggleDrawer }) => {
 
   const handleLogout = async () => {
     try {
-      await axios.post("/auth/logout");
+      // await axios.post("/auth/logout");
+      await logout();
     } catch {}
     navigate("/login");
   };
