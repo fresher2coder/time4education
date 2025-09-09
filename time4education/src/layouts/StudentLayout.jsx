@@ -12,22 +12,30 @@ const StudentLayout = () => {
   const toggle = () => setOpen((v) => !v);
   const close = () => setOpen(false);
 
-  // Close drawer on route change
   useEffect(() => close(), [location.pathname]);
 
-  // ESC to close drawer
   useEffect(() => {
-    const onKey = (e) => {
-      if (e.key === "Escape") close();
-    };
+    const onKey = (e) => e.key === "Escape" && close();
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
   }, []);
 
+  if (hideSidebar) {
+    // === Fullscreen mode ===
+    return (
+      <div className="w-screen h-screen bg-white">
+        <main className="w-full h-full overflow-auto">
+          <Outlet />
+        </main>
+      </div>
+    );
+  }
+
+  // === Normal layout ===
   return (
     <div className="flex min-h-screen bg-gray-50">
       {/* Mobile overlay */}
-      {!hideSidebar && open && (
+      {open && (
         <div
           className="fixed inset-0 z-20 bg-black/40 lg:hidden"
           onClick={close}
@@ -35,31 +43,21 @@ const StudentLayout = () => {
       )}
 
       {/* Sidebar */}
-      {!hideSidebar && (
-        <aside
-          className={`
-            fixed top-0 left-0 z-30 h-screen w-64 bg-white shadow-lg
-            transform transition-transform duration-300
-            ${open ? "translate-x-0" : "-translate-x-full"}
-            lg:translate-x-0 
-          `}
-        >
-          <Sidebar closeDrawer={close} />
-        </aside>
-      )}
+      <aside
+        className={`
+          fixed top-0 left-0 z-30 h-screen w-64 bg-white shadow-lg
+          transform transition-transform duration-300
+          ${open ? "translate-x-0" : "-translate-x-full"}
+          lg:translate-x-0 
+        `}
+      >
+        <Sidebar closeDrawer={close} />
+      </aside>
 
       {/* Main area */}
-      <div
-        className={`flex-1 flex flex-col transition-all duration-300 ${
-          hideSidebar ? "ml-0" : "lg:ml-64"
-        }`}
-      >
-        {!hideSidebar && <Topbar toggleDrawer={toggle} />}
-        <main
-          className={`flex-1 overflow-auto transition-all duration-300 ${
-            hideSidebar ? "p-0" : "p-6"
-          }`}
-        >
+      <div className="flex-1 flex flex-col lg:ml-64">
+        <Topbar toggleDrawer={toggle} />
+        <main className="flex-1 overflow-auto p-6">
           <Outlet />
         </main>
       </div>
