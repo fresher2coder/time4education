@@ -15,6 +15,7 @@ const app = express();
 app.use(express.json());
 app.use(cookieParser());
 
+// Allowed origins (no trailing slashes!)
 const allowedOrigins = [
   "http://localhost:5173",
   "https://time4education.vercel.app",
@@ -23,21 +24,21 @@ const allowedOrigins = [
 app.use(
   cors({
     origin: function (origin, callback) {
-      if (!origin) return callback(null, true); // allow non-browser requests
-      const allowed = allowedOrigins.some((url) => origin.startsWith(url));
-      if (!allowed) {
+      if (!origin) return callback(null, true); // allow non-browser requests (like Postman)
+      if (allowedOrigins.includes(origin)) {
+        return callback(null, true);
+      } else {
         return callback(
-          new Error("CORS policy does not allow: " + origin),
+          new Error("CORS policy does not allow origin: " + origin),
           false
         );
       }
-      return callback(null, true);
     },
-    credentials: true,
+    credentials: true, // <-- allow cookies
   })
 );
 
-// DB
+// DB connection
 mongoose
   .connect(process.env.MONGO_URI)
   .then(() => console.log("✅ MongoDB connected"))

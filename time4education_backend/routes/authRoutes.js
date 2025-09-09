@@ -1,3 +1,4 @@
+// routes/authRoutes.js
 import express from "express";
 import jwt from "jsonwebtoken";
 import User from "../models/User.js";
@@ -5,20 +6,20 @@ import authMiddleware from "../middleware/authMiddleware.js";
 
 const router = express.Router();
 
-// Helper: set cookie
+// === Helper to set HttpOnly cookie ===
 const setAuthCookie = (res, token) => {
   res.cookie("token", token, {
     httpOnly: true,
-    secure: process.env.NODE_ENV === "production", // HTTPS in prod
-    sameSite: process.env.NODE_ENV === "production" ? "strict" : "lax",
+    secure: true, // must be true for HTTPS
+    sameSite: "none", // required for cross-site (Vercel <-> Render)
     maxAge: 24 * 60 * 60 * 1000, // 1 day
   });
 };
 
-// REGISTER
+// === REGISTER ===
 router.post("/register", async (req, res) => {
   try {
-    const { name, rollNo, email, password, role, college, batch, department } =
+    const { name, rollNo, email, password, college, batch, department } =
       req.body;
 
     const exists = await User.findOne({ email });
@@ -28,7 +29,7 @@ router.post("/register", async (req, res) => {
       name,
       rollNo,
       email,
-      password, // plain; model hashes it
+      password, // User model handles hashing
       role: "student", // force student role
       college,
       batch,
@@ -37,7 +38,7 @@ router.post("/register", async (req, res) => {
     await user.save();
 
     res.status(201).json({
-      message: "User registered",
+      message: "User registered successfully",
       user: {
         id: user._id,
         name: user.name,
@@ -54,30 +55,30 @@ router.post("/register", async (req, res) => {
   }
 });
 
-// LOGIN (HttpOnly cookie)
+// === LOGIN ===
 router.post("/login", async (req, res) => {
   try {
     const { email, password } = req.body;
 
     const user = await User.findOne({ email });
-    if (!user) return res.status(400).json({ message: "Invalid email" });
+    if (!user)
+      return res.status(400).json({ message: "Invalid email or password" });
 
-    const ok = await user.matchPassword(password);
-    if (!ok) return res.status(400).json({ message: "Invalid password" });
+    const valid = await user.matchPassword(password);
+    if (!valid)
+      return res.status(400).json({ message: "Invalid email or password" });
 
     const token = jwt.sign(
       { id: user._id, role: user.role },
       process.env.JWT_SECRET,
-      {
-        expiresIn: "1d",
-      }
+      { expiresIn: "1d" }
     );
 
+    // set HttpOnly cookie
     setAuthCookie(res, token);
 
     res.json({
       message: "Login successful",
-      token,
       user: {
         id: user._id,
         name: user.name,
@@ -94,31 +95,38 @@ router.post("/login", async (req, res) => {
   }
 });
 
-// CURRENT USER (from cookie)
+// === CURRENT USER ===
 router.get("/me", authMiddleware, async (req, res) => {
   try {
-    // const u = await User.findById(req.user.id).select("-password");
-    const u = req.user;
-    if (!u) return res.status(404).json({ message: "User not found" });
-    res.json(u);
+    // authMiddleware already fetches and attaches user
+    res.json({
+      id: req.user._id,
+      name: req.user.name,
+      rollNo: req.user.rollNo,
+      email: req.user.email,
+      role: req.user.role,
+      college: req.user.college,
+      batch: req.user.batch,
+      department: req.user.department,
+    });
   } catch (err) {
     res.status(500).json({ message: "Fetch error", error: err.message });
   }
 });
 
-// LOGOUT (clear cookie)
+// === LOGOUT ===
 router.post("/logout", (_req, res) => {
   res.clearCookie("token", {
     httpOnly: true,
-    secure: process.env.NODE_ENV === "production",
-    sameSite: process.env.NODE_ENV === "production" ? "strict" : "lax",
+    secure: true,
+    sameSite: "none",
   });
   res.json({ message: "Logged out" });
 });
 
-// Example protected route
+// === Example Protected Route ===
 router.get("/dashboard", authMiddleware, (req, res) => {
-  res.json({ message: "Welcome to your dashboard 🚀", user: req.user });
+  res.json({ message: `Welcome ${req.user.name} 🚀`, user: req.user });
 });
 
 export default router;
