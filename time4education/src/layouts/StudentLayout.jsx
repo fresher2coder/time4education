@@ -15,7 +15,7 @@ const StudentLayout = () => {
   // Close drawer on route change
   useEffect(() => close(), [location.pathname]);
 
-  // ESC to close drawer (accessibility)
+  // ESC to close drawer
   useEffect(() => {
     const onKey = (e) => {
       if (e.key === "Escape") close();
@@ -49,9 +49,17 @@ const StudentLayout = () => {
       )}
 
       {/* Main area */}
-      <div className="flex-1 flex flex-col lg:ml-64">
+      <div
+        className={`flex-1 flex flex-col transition-all duration-300 ${
+          hideSidebar ? "ml-0" : "lg:ml-64"
+        }`}
+      >
         {!hideSidebar && <Topbar toggleDrawer={toggle} />}
-        <main className="flex-1 overflow-auto p-6">
+        <main
+          className={`flex-1 overflow-auto transition-all duration-300 ${
+            hideSidebar ? "p-0" : "p-6"
+          }`}
+        >
           <Outlet />
         </main>
       </div>
