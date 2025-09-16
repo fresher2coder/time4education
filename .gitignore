@@ -57,3 +57,9 @@ dump/
 *.tgz
 *.zip
 *.tar.gz
+
+#Folders
+Results
+users
+
+time4education.json
