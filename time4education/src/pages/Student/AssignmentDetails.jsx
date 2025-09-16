@@ -3,6 +3,8 @@ import { useEffect, useMemo, useRef, useState, useCallback } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import axios from "@/api/axios";
 import { useFullscreen } from "@/context/FullScreenContext";
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+import { okaidia } from "react-syntax-highlighter/dist/esm/styles/prism";
 
 // -------- utils --------
 const shuffle = (arr) => {
@@ -47,7 +49,7 @@ export default function AssignmentDetails() {
   const startedRef = useRef(false);
   const guardRef = useRef(false); // to avoid duplicate penalties
   const wasFullscreenRef = useRef(false);
-  const submittingRef = useRef(false); // NEW: prevents double submit
+  const submittingRef = useRef(false); // prevents double submit
 
   // refs to hold latest state for autosave
   const answersRef = useRef(answers);
@@ -122,7 +124,6 @@ export default function AssignmentDetails() {
     if (!raw) return;
     try {
       const parsed = JSON.parse(raw);
-      // basic safety check
       if (
         parsed.assignmentId === id &&
         parsed.answers &&
@@ -130,7 +131,6 @@ export default function AssignmentDetails() {
       ) {
         setAnswers(parsed.answers);
         setCurrentIdx(parsed.currentIdx ?? 0);
-        // Remaining time only restored if within window (optional)
         if (typeof parsed.remaining === "number" && parsed.remaining > 0) {
           setRemaining(parsed.remaining);
         }
@@ -143,29 +143,28 @@ export default function AssignmentDetails() {
     try {
       const payload = {
         assignmentId: id,
-        answers: answersRef.current, // always fresh
-        currentIdx: currentIdxRef.current, // always fresh
-        qOrder: questions.map((q) => q._id), // fixed question order
-        remaining: remainingRef.current, // always fresh
+        answers: answersRef.current,
+        currentIdx: currentIdxRef.current,
+        qOrder: questions.map((q) => q._id),
+        remaining: remainingRef.current,
         ts: Date.now(),
+        violationCount, // store violation count as well
       };
       localStorage.setItem(LS_KEY, JSON.stringify(payload));
-      // console.log("Autosaved", payload);
     } catch (err) {
       console.error("Autosave error:", err);
     }
-  }, [id, questions, LS_KEY]);
+  }, [id, questions, violationCount]);
 
   useEffect(() => {
     if (!started || submitted) return;
-
-    const interval = setInterval(saveDraft, 5000); // every 5s
+    const interval = setInterval(saveDraft, 5000);
     return () => clearInterval(interval);
   }, [started, submitted, saveDraft]);
 
   useEffect(() => {
     if (!started || submitted) return;
-    saveDraft(); // save instantly on answers/currentIdx/remaining change
+    saveDraft();
   }, [answers, currentIdx, remaining, started, submitted, saveDraft]);
 
   // ------------- block right-click / copy / etc. -------------
@@ -177,36 +176,38 @@ export default function AssignmentDetails() {
       return false;
     };
 
-    document.addEventListener("contextmenu", prevent);
-    document.addEventListener("dragstart", stop);
-    document.addEventListener("cut", stop);
-    document.addEventListener("copy", stop);
-    document.addEventListener("paste", stop);
-    document.addEventListener("selectstart", stop);
+    ["contextmenu", "dragstart", "cut", "copy", "paste", "selectstart"].forEach(
+      (evt) =>
+        document.addEventListener(evt, evt === "contextmenu" ? prevent : stop)
+    );
 
     return () => {
-      document.removeEventListener("contextmenu", prevent);
-      document.removeEventListener("dragstart", stop);
-      document.removeEventListener("cut", stop);
-      document.removeEventListener("copy", stop);
-      document.removeEventListener("paste", stop);
-      document.removeEventListener("selectstart", stop);
+      [
+        "contextmenu",
+        "dragstart",
+        "cut",
+        "copy",
+        "paste",
+        "selectstart",
+      ].forEach((evt) =>
+        document.removeEventListener(
+          evt,
+          evt === "contextmenu" ? prevent : stop
+        )
+      );
     };
   }, []);
 
   // ------------- tab switch / visibility penalties -------------
-
   useEffect(() => {
     const onVis = () => {
       if (!startedRef.current || submitted) return;
 
       if (document.hidden) {
-        // de-dupe rapid toggles
         if (guardRef.current) return;
         guardRef.current = true;
         setTimeout(() => (guardRef.current = false), 800);
 
-        // update violation count safely
         setViolationCount((prev) => {
           const next = prev + 1;
 
@@ -215,12 +216,8 @@ export default function AssignmentDetails() {
               "⚠️ Warning: Do not switch tabs/windows during the test."
             );
           } else if (next === 2) {
-            setRemaining((r) => {
-              const safe = Math.max(15, Math.floor(r / 2));
-
-              setMessage("⏳ Time penalty applied: remaining time halved.");
-              return safe;
-            });
+            setRemaining((r) => Math.max(15, Math.floor(r / 2)));
+            setMessage("⏳ Time penalty applied: remaining time halved.");
           } else if (next >= 3) {
             setMessage("❌ Test terminated due to repeated tab switching.");
             handleSubmit(true);
@@ -235,14 +232,11 @@ export default function AssignmentDetails() {
     return () => document.removeEventListener("visibilitychange", onVis);
   }, [submitted]);
 
-  //-------------- handly exit fullscreen ---------------
-  // 👇 Call this when we need to go fullscreen
+  // ------------- fullscreen / violation watcher -------------
   const goFullscreen = async () => {
     try {
       await document.documentElement.requestFullscreen();
-    } catch (err) {
-      console.error("Failed to enter fullscreen:", err);
-    }
+    } catch {}
   };
 
   useEffect(() => {
@@ -255,72 +249,46 @@ export default function AssignmentDetails() {
 
       const nowInFullscreen = !!fsElement;
       wasFullscreenRef.current = nowInFullscreen;
-      setHideSidebar(true); // hide sidebar
+      setHideSidebar(true);
 
       if (!nowInFullscreen) {
-        // ✅ Consider as a tab switch / violation
         if (guardRef.current) return;
         guardRef.current = true;
         setTimeout(() => (guardRef.current = false), 800);
 
         setViolationCount((c) => {
           const next = c + 1;
-          if (!submittingRef.current && next === 1) {
+          if (!submittingRef.current && next === 1)
             alert("⚠️ Warning: Do not exit fullscreen during the test.");
-          } else if (!submittingRef.current && next === 2) {
+          else if (!submittingRef.current && next === 2) {
             alert("⏳ Time penalty applied: remaining time halved.");
-            // halve your remaining time here if you already have a timer state
             setRemaining((r) => Math.max(15, Math.floor(r / 2)));
           } else if (!submittingRef.current && next >= 3) {
             alert("❌ Test terminated due to repeated fullscreen exits.");
-            handleSubmit(true); // auto submit
+            handleSubmit(true);
           }
           return next;
         });
       }
     };
 
-    document.addEventListener("fullscreenchange", onFsChange);
-    document.addEventListener("webkitfullscreenchange", onFsChange);
-    document.addEventListener("mozfullscreenchange", onFsChange);
-    document.addEventListener("MSFullscreenChange", onFsChange);
+    [
+      "fullscreenchange",
+      "webkitfullscreenchange",
+      "mozfullscreenchange",
+      "MSFullscreenChange",
+    ].forEach((evt) => document.addEventListener(evt, onFsChange));
 
-    return () => {
-      document.removeEventListener("fullscreenchange", onFsChange);
-      document.removeEventListener("webkitfullscreenchange", onFsChange);
-      document.removeEventListener("mozfullscreenchange", onFsChange);
-      document.removeEventListener("MSFullscreenChange", onFsChange);
-    };
+    return () =>
+      [
+        "fullscreenchange",
+        "webkitfullscreenchange",
+        "mozfullscreenchange",
+        "MSFullscreenChange",
+      ].forEach((evt) => document.removeEventListener(evt, onFsChange));
   }, []);
 
-  // ------------- fullscreen change watcher -------------
-  useEffect(() => {
-    const onFs = () => {
-      const isFs =
-        document.fullscreenElement ||
-        document.webkitFullscreenElement ||
-        document.mozFullScreenElement ||
-        document.msFullscreenElement;
-      if (startedRef.current) {
-        if (!isFs && wasFullscreenRef.current) {
-          setMessage("⚠️ You exited fullscreen. Please return to fullscreen.");
-        }
-      }
-      wasFullscreenRef.current = !!isFs;
-    };
-    document.addEventListener("fullscreenchange", onFs);
-    document.addEventListener("webkitfullscreenchange", onFs);
-    document.addEventListener("mozfullscreenchange", onFs);
-    document.addEventListener("MSFullscreenChange", onFs);
-    return () => {
-      document.removeEventListener("fullscreenchange", onFs);
-      document.removeEventListener("webkitfullscreenchange", onFs);
-      document.removeEventListener("mozfullscreenchange", onFs);
-      document.removeEventListener("MSFullscreenChange", onFs);
-    };
-  }, []);
-
-  // ------------- start test (request fullscreen + start timer) -------------
+  // ------------- start test -------------
   const enterFullscreen = async () => {
     const el = document.documentElement;
     if (el.requestFullscreen) await el.requestFullscreen();
@@ -333,22 +301,20 @@ export default function AssignmentDetails() {
     if (!canStartInfo.canStart) return;
     try {
       await enterFullscreen();
-      setHideSidebar(true); // hide sidebar
+      setHideSidebar(true);
     } catch {}
     wasFullscreenRef.current = true;
 
-    // set time from duration unless restored
     const durationMin = assignment.test.duration || 15;
     setRemaining((prev) => (prev && prev > 0 ? prev : durationMin * 60));
     setStarted(true);
     startedRef.current = true;
 
-    // tick timer
     timerRef.current = setInterval(() => {
       setRemaining((r) => {
         if (r <= 1) {
           clearInterval(timerRef.current);
-          handleSubmit(true); // time up -> submit
+          handleSubmit(true);
           return 0;
         }
         return r - 1;
@@ -374,17 +340,11 @@ export default function AssignmentDetails() {
   const handleSubmit = async (auto = false) => {
     if (submittingRef.current || submitted) return;
     submittingRef.current = true;
-    wasFullscreenRef.current = true;
 
-    if (timerRef.current) {
-      clearInterval(timerRef.current);
-      timerRef.current = null;
-    }
+    if (timerRef.current) clearInterval(timerRef.current);
 
     try {
-      // ✅ pick answers depending on auto/manual
       const snapshotAnswers = auto ? { ...answersRef.current } : { ...answers };
-
       const payload = {
         assignmentId: id,
         answers: Object.entries(snapshotAnswers).map(
@@ -403,15 +363,11 @@ export default function AssignmentDetails() {
       if (res.status >= 200 && res.status < 300) {
         localStorage.removeItem(LS_KEY);
         setSubmitted(true);
-        setHideSidebar(false); // hide sidebar
+        setHideSidebar(false);
 
         try {
-          if (document.fullscreenElement) {
-            await document.exitFullscreen();
-          }
-        } catch (fsErr) {
-          console.warn("Fullscreen exit failed:", fsErr);
-        }
+          if (document.fullscreenElement) await document.exitFullscreen();
+        } catch {}
 
         navigate("/student/test/completed", {
           state: {
@@ -427,7 +383,7 @@ export default function AssignmentDetails() {
       setMessage(
         err.response?.data?.message || err.message || "❌ Error submitting test"
       );
-      submittingRef.current = false; // allow retry
+      submittingRef.current = false;
     }
   };
 
@@ -453,21 +409,18 @@ export default function AssignmentDetails() {
     : 0;
 
   // ------------- render -------------
-  if (loading) {
+  if (loading)
     return (
       <div className="p-6 text-center text-gray-500">Loading assignment…</div>
     );
-  }
-
-  if (!assignment) {
+  if (!assignment)
     return (
       <div className="p-6 text-center text-red-500">
         ❌ Assignment not found
       </div>
     );
-  }
 
-  // Not started screen (with gating)
+  // Not started screen
   if (!started && !submitted) {
     return (
       <div className="max-w-3xl mx-auto p-6">
@@ -524,10 +477,9 @@ export default function AssignmentDetails() {
     );
   }
 
-  // active test UI
+  // Active test UI
   return (
     <div className="relative">
-      {/* 🔸 Banner if student exits fullscreen */}
       {!wasFullscreenRef.current && (
         <div className="fixed top-0 left-0 right-0 bg-yellow-100 text-yellow-800 p-4 flex justify-between items-center z-50">
           <span>
@@ -543,17 +495,13 @@ export default function AssignmentDetails() {
         </div>
       )}
 
-      {/* 🔹 Example: Hide drawer / disable UI when not in fullscreen */}
       <div
         className={
           wasFullscreenRef.current ? "" : "pointer-events-none opacity-50"
         }
       >
-        <div
-          className="p-0 m-0"
-          style={{ userSelect: "none", WebkitUserSelect: "none" }}
-        >
-          {/* Header bar */}
+        <div style={{ userSelect: "none", WebkitUserSelect: "none" }}>
+          {/* Header */}
           <div className="sticky top-0 z-10 bg-white border-b px-4 py-3 flex items-center justify-between">
             <div className="flex items-center gap-4">
               <h1 className="font-semibold">{assignment.test?.title}</h1>
@@ -573,27 +521,54 @@ export default function AssignmentDetails() {
 
           {/* Body */}
           <div className="flex">
-            {/* Main Q pane */}
+            {/* Main question */}
             <div className="flex-1 p-6">
               {current && (
                 <div className="border rounded-2xl p-5 shadow-sm">
                   <div className="mb-4 text-sm text-gray-500">
                     Question {currentIdx + 1} of {questions.length}
                   </div>
-                  <h2 className="font-semibold mb-4">{current.questionText}</h2>
+                  {/* Render pseudocode / code if category is pseudo or code */}
+                  {current.category === "pseudo" ||
+                  current.category === "code" ? (
+                    <SyntaxHighlighter
+                      language={current.language || "javascript"}
+                      style={okaidia}
+                    >
+                      {current.questionText}
+                    </SyntaxHighlighter>
+                  ) : (
+                    <h2 className="font-semibold mb-4">
+                      {current.questionText}
+                    </h2>
+                  )}
 
-                  <div className="space-y-2">
-                    {current.options.map((opt, idx) => {
-                      const chosen = answers[current._id]?.[0];
-                      const selected = chosen === opt;
+                  {/* Sample input/output */}
+                  {current.sampleInput && (
+                    <div className="my-2 p-2 bg-gray-100 rounded">
+                      <strong>Sample Input:</strong>
+                      <pre>{current.sampleInput}</pre>
+                    </div>
+                  )}
+                  {current.sampleOutput && (
+                    <div className="my-2 p-2 bg-gray-100 rounded">
+                      <strong>Sample Output:</strong>
+                      <pre>{current.sampleOutput}</pre>
+                    </div>
+                  )}
+
+                  {/* MCQ options */}
+                  <div className="mt-4 flex flex-col gap-2">
+                    {current.options.map((opt, i) => {
+                      const selected = answers[current._id]?.includes(opt);
                       return (
                         <button
-                          key={idx}
+                          key={i}
                           onClick={() => selectOption(current._id, opt)}
-                          className={`w-full text-left px-4 py-2 rounded border ${
+                          className={`text-left px-4 py-2 border rounded-lg hover:border-blue-500 transition-all ${
                             selected
                               ? "bg-blue-600 text-white border-blue-600"
-                              : "bg-gray-100 hover:bg-gray-200 border-transparent"
+                              : "bg-white text-gray-800"
                           }`}
                         >
                           {opt}
@@ -601,91 +576,65 @@ export default function AssignmentDetails() {
                       );
                     })}
                   </div>
-
-                  {/* Question navigation */}
-                  <div className="mt-6 flex items-center justify-between">
-                    <button
-                      onClick={prevQ}
-                      disabled={currentIdx === 0}
-                      className={`px-4 py-2 rounded ${
-                        currentIdx === 0
-                          ? "bg-gray-200 text-gray-500 cursor-not-allowed"
-                          : "bg-gray-100 hover:bg-gray-200"
-                      }`}
-                    >
-                      ← Previous
-                    </button>
-
-                    <button
-                      onClick={nextQ}
-                      disabled={currentIdx === questions.length - 1}
-                      className={`px-4 py-2 rounded ${
-                        currentIdx === questions.length - 1
-                          ? "bg-gray-200 text-gray-500 cursor-not-allowed"
-                          : "bg-gray-100 hover:bg-gray-200"
-                      }`}
-                    >
-                      Next →
-                    </button>
-                  </div>
-
-                  {/* Submit button separate below */}
-                  <div className="mt-8 flex justify-center">
-                    <button
-                      onClick={() => {
-                        const confirmed = window.confirm(
-                          "Are you sure you want to end and submit the test? You cannot return after submitting."
-                        );
-                        if (confirmed) {
-                          handleSubmit(false);
-                        }
-                      }}
-                      className="px-6 py-3 rounded bg-red-600 text-white hover:bg-red-700 font-semibold shadow"
-                    >
-                      End Test
-                    </button>
-                  </div>
-
-                  {!!message && (
-                    <div className="mt-4 p-3 rounded bg-yellow-50 border border-yellow-200 text-sm text-yellow-800">
-                      {message}
-                    </div>
-                  )}
                 </div>
+              )}
+
+              {/* Navigation */}
+              <div className="mt-6 flex justify-between">
+                <button
+                  onClick={prevQ}
+                  disabled={currentIdx === 0}
+                  className="px-4 py-2 rounded bg-gray-200 hover:bg-gray-300 disabled:opacity-50"
+                >
+                  Previous
+                </button>
+                <button
+                  onClick={nextQ}
+                  disabled={currentIdx === questions.length - 1}
+                  className="px-4 py-2 rounded bg-gray-200 hover:bg-gray-300 disabled:opacity-50"
+                >
+                  Next
+                </button>
+              </div>
+
+              <div className="mt-6 flex justify-end">
+                <button
+                  onClick={() => handleSubmit(false)}
+                  className="px-6 py-3 rounded bg-green-600 text-white hover:bg-green-700 font-semibold"
+                >
+                  Submit Test
+                </button>
+              </div>
+
+              {message && (
+                <div className="mt-4 text-red-600 font-medium">{message}</div>
               )}
             </div>
 
-            {/* Right nav pane */}
-            <aside className="w-64 border-l p-4 sticky top-[49px] h-[calc(100vh-49px)] overflow-auto bg-white">
-              <div className="font-semibold mb-2">Questions</div>
+            {/* Sidebar */}
+            <div className="w-60 border-l bg-gray-50 p-4 overflow-y-auto">
+              <h3 className="font-semibold mb-3">Questions</h3>
               <div className="grid grid-cols-5 gap-2">
-                {questions.map((q, i) => {
-                  const done = !!answers[q._id]?.length;
-                  const isCur = i === currentIdx;
+                {questions.map((q, idx) => {
+                  const answered = answers[q._id]?.length;
                   return (
                     <button
                       key={q._id}
-                      onClick={() => goTo(i)}
-                      className={`h-9 rounded text-sm font-medium border ${
-                        isCur
-                          ? "bg-blue-600 text-white border-blue-600"
-                          : done
-                            ? "bg-green-100 border-green-300"
-                            : "bg-gray-100 hover:bg-gray-200 border-gray-200"
+                      onClick={() => goTo(idx)}
+                      className={`w-10 h-10 rounded-full flex items-center justify-center text-sm font-semibold ${
+                        idx === currentIdx
+                          ? "bg-blue-600 text-white"
+                          : answered
+                            ? "bg-green-500 text-white"
+                            : "bg-gray-300 text-gray-700"
                       }`}
-                      title={done ? "Answered" : "Not answered"}
                     >
-                      {i + 1}
+                      {idx + 1}
                     </button>
                   );
                 })}
               </div>
-
-              <div className="mt-6 text-xs text-gray-500 space-y-1">
-                <div>Violations: {violationCount}/3</div>
-                <div>Autosaves every 5s</div>
-              </div>
-            </aside>
+            </div>
           </div>
         </div>
       </div>
