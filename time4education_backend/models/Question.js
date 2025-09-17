@@ -42,6 +42,7 @@ const questionSchema = new mongoose.Schema(
     },
     marks: { type: Number, default: 1, min: 0 },
     isActive: { type: Boolean, default: true },
+    lang: { type: String, default: "java" }, // <-- add this
 
     // ✅ Reference to creator
     createdBy: {

@@ -375,6 +375,8 @@ export default function AssignmentDetails() {
             autoSubmitted: auto,
           },
         });
+
+        wasFullscreenRef.current = false;
       } else {
         throw new Error(res.data?.message || "Unexpected server response");
       }
@@ -529,13 +531,18 @@ export default function AssignmentDetails() {
                     Question {currentIdx + 1} of {questions.length}
                   </div>
                   {/* Render pseudocode / code if category is pseudo or code */}
-                  {current.category === "pseudo" ||
-                  current.category === "code" ? (
+                  {current.type === "coding-mcqs" ||
+                  current.type === "coding" ? (
                     <SyntaxHighlighter
-                      language={current.language || "javascript"}
+                      language={current.lang || "java"}
                       style={okaidia}
+                      showLineNumbers
+                      wrapLongLines
                     >
-                      {current.questionText}
+                      {current.questionText
+                        .replace(/\\n/g, "\n")
+                        .replace(/\\t/g, "    ") // 4 spaces for tabs
+                        .replace(/\\"/g, '"')}
                     </SyntaxHighlighter>
                   ) : (
                     <h2 className="font-semibold mb-4">
