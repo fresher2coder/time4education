@@ -37,6 +37,7 @@ export default function AssignmentDetails() {
   const [answers, setAnswers] = useState({}); // { [qId]: [selected] }
   const [currentIdx, setCurrentIdx] = useState(0);
   const [remaining, setRemaining] = useState(0); // seconds
+  const [submitFullScreen, setSubmitFullScreen] = useState(false);
 
   // ui
   const [loading, setLoading] = useState(true);
@@ -83,6 +84,7 @@ export default function AssignmentDetails() {
           options: shuffle(q.options || []),
         }));
         setAssignment(res.data);
+
         setQuestions(shuffled);
       } catch (e) {
         console.error("Error fetching assignment:", e);
@@ -232,62 +234,6 @@ export default function AssignmentDetails() {
     return () => document.removeEventListener("visibilitychange", onVis);
   }, [submitted]);
 
-  // ------------- fullscreen / violation watcher -------------
-  const goFullscreen = async () => {
-    try {
-      await document.documentElement.requestFullscreen();
-    } catch {}
-  };
-
-  useEffect(() => {
-    const onFsChange = () => {
-      const fsElement =
-        document.fullscreenElement ||
-        document.webkitFullscreenElement ||
-        document.mozFullScreenElement ||
-        document.msFullscreenElement;
-
-      const nowInFullscreen = !!fsElement;
-      wasFullscreenRef.current = nowInFullscreen;
-      setHideSidebar(true);
-
-      if (!nowInFullscreen) {
-        if (guardRef.current) return;
-        guardRef.current = true;
-        setTimeout(() => (guardRef.current = false), 800);
-
-        setViolationCount((c) => {
-          const next = c + 1;
-          if (!submittingRef.current && next === 1)
-            alert("⚠️ Warning: Do not exit fullscreen during the test.");
-          else if (!submittingRef.current && next === 2) {
-            alert("⏳ Time penalty applied: remaining time halved.");
-            setRemaining((r) => Math.max(15, Math.floor(r / 2)));
-          } else if (!submittingRef.current && next >= 3) {
-            alert("❌ Test terminated due to repeated fullscreen exits.");
-            handleSubmit(true);
-          }
-          return next;
-        });
-      }
-    };
-
-    [
-      "fullscreenchange",
-      "webkitfullscreenchange",
-      "mozfullscreenchange",
-      "MSFullscreenChange",
-    ].forEach((evt) => document.addEventListener(evt, onFsChange));
-
-    return () =>
-      [
-        "fullscreenchange",
-        "webkitfullscreenchange",
-        "mozfullscreenchange",
-        "MSFullscreenChange",
-      ].forEach((evt) => document.removeEventListener(evt, onFsChange));
-  }, []);
-
   // ------------- start test -------------
   const enterFullscreen = async () => {
     const el = document.documentElement;
@@ -375,7 +321,7 @@ export default function AssignmentDetails() {
             autoSubmitted: auto,
           },
         });
-
+        setHideSidebar(false);
         wasFullscreenRef.current = false;
       } else {
         throw new Error(res.data?.message || "Unexpected server response");
@@ -388,6 +334,66 @@ export default function AssignmentDetails() {
       submittingRef.current = false;
     }
   };
+
+  // ------------- fullscreen / violation watcher -------------
+  const goFullscreen = async () => {
+    try {
+      await document.documentElement.requestFullscreen();
+    } catch {}
+  };
+
+  useEffect(() => {
+    const onFsChange = () => {
+      const fsElement =
+        document.fullscreenElement ||
+        document.webkitFullscreenElement ||
+        document.mozFullScreenElement ||
+        document.msFullscreenElement;
+
+      const nowInFullscreen = !!fsElement;
+      wasFullscreenRef.current = nowInFullscreen;
+      // setHideSidebar(true);
+
+      if (submittingRef.current || submitFullScreen) {
+        return;
+      }
+
+      if (!nowInFullscreen) {
+        if (guardRef.current) return;
+        guardRef.current = true;
+        setTimeout(() => (guardRef.current = false), 800);
+
+        setViolationCount((c) => {
+          const next = c + 1;
+          if (!submittingRef.current && next === 1)
+            alert("⚠️ Warning: Do not exit fullscreen during the test.");
+          else if (!submittingRef.current && next === 2) {
+            alert("⏳ Time penalty applied: remaining time halved.");
+            setRemaining((r) => Math.max(15, Math.floor(r / 2)));
+          } else if (!submittingRef.current && next >= 3) {
+            alert("❌ Test terminated due to repeated fullscreen exits.");
+            handleSubmit(true);
+          }
+          return next;
+        });
+      }
+    };
+
+    [
+      "fullscreenchange",
+      "webkitfullscreenchange",
+      "mozfullscreenchange",
+      "MSFullscreenChange",
+    ].forEach((evt) => document.addEventListener(evt, onFsChange));
+
+    return () =>
+      [
+        "fullscreenchange",
+        "webkitfullscreenchange",
+        "mozfullscreenchange",
+        "MSFullscreenChange",
+      ].forEach((evt) => document.removeEventListener(evt, onFsChange));
+  }, [setViolationCount, setRemaining, handleSubmit]);
 
   // beforeunload guard
   useEffect(() => {
@@ -606,7 +612,10 @@ export default function AssignmentDetails() {
 
               <div className="mt-6 flex justify-end">
                 <button
-                  onClick={() => handleSubmit(false)}
+                  onClick={() => {
+                    setSubmitFullScreen(true);
+                    handleSubmit(false);
+                  }}
                   className="px-6 py-3 rounded bg-green-600 text-white hover:bg-green-700 font-semibold"
                 >
                   Submit Test
@@ -640,6 +649,10 @@ export default function AssignmentDetails() {
                     </button>
                   );
                 })}
+              </div>
+              <div className="mt-6 text-xs text-gray-500 space-y-1">
+                <div>Violations: {violationCount}/3</div>
+                <div>Autosaves every 5s</div>
               </div>
             </div>
           </div>
