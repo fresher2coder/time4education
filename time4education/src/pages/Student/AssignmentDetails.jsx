@@ -610,18 +610,6 @@ export default function AssignmentDetails() {
                 </button>
               </div>
 
-              <div className="mt-6 flex justify-end">
-                <button
-                  onClick={() => {
-                    setSubmitFullScreen(true);
-                    handleSubmit(false);
-                  }}
-                  className="px-6 py-3 rounded bg-green-600 text-white hover:bg-green-700 font-semibold"
-                >
-                  Submit Test
-                </button>
-              </div>
-
               {message && (
                 <div className="mt-4 text-red-600 font-medium">{message}</div>
               )}
@@ -653,6 +641,17 @@ export default function AssignmentDetails() {
               <div className="mt-6 text-xs text-gray-500 space-y-1">
                 <div>Violations: {violationCount}/3</div>
                 <div>Autosaves every 5s</div>
+              </div>
+              <div className="mt-6 flex justify-end">
+                <button
+                  onClick={() => {
+                    setSubmitFullScreen(true);
+                    handleSubmit(false);
+                  }}
+                  className="px-6 py-3 rounded bg-green-600 text-white hover:bg-green-700 font-semibold"
+                >
+                  Submit Test
+                </button>
               </div>
             </div>
           </div>
