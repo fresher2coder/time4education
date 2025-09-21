@@ -59,14 +59,14 @@ const normalizeDate = () => {
 router.post("/", authMiddleware, roleMiddleware("admin"), async (req, res) => {
   try {
     const { title, description, duration, startTime, endTime } = req.body;
-    const normalizedStart = startTime ? new Date(startTime) : null;
-    const normalizedEnd = endTime ? new Date(endTime) : null;
+    // const normalizedStart = startTime ? new Date(startTime) : null;
+    // const normalizedEnd = endTime ? new Date(endTime) : null;
     const newTest = new Test({
       title,
       description,
       duration,
-      startTime: normalizedStart,
-      endTime: normalizedEnd,
+      startTime,
+      endTime,
       createdBy: req.user.id,
       maxMarks: 0, // initially no questions linked
     });

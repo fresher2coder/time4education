@@ -252,6 +252,10 @@ export default function AssignmentDetails() {
     wasFullscreenRef.current = true;
 
     const durationMin = assignment.test.duration || 15;
+    const testEnd = assignment.test.endTime
+      ? new Date(assignment.test.endTime)
+      : null;
+
     setRemaining((prev) => (prev && prev > 0 ? prev : durationMin * 60));
     setStarted(true);
     startedRef.current = true;
@@ -266,6 +270,20 @@ export default function AssignmentDetails() {
         return r - 1;
       });
     }, 1000);
+
+    // ✅ force auto-submit at endTime, even if remaining > 0
+    if (testEnd) {
+      const now = new Date();
+      const msUntilEnd = testEnd.getTime() - now.getTime();
+      if (msUntilEnd > 0) {
+        setTimeout(() => {
+          if (!submitted) {
+            clearInterval(timerRef.current);
+            handleSubmit(true);
+          }
+        }, msUntilEnd);
+      }
+    }
   };
 
   // ------------- navigation -------------
