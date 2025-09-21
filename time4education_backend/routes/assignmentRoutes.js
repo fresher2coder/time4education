@@ -140,6 +140,11 @@ router.get("/:id", authMiddleware, async (req, res) => {
   }
 });
 
+import { DateTime } from "luxon";
+const normalizeDate = (dateString) => {
+  const zone = "Asia/Kolkata";
+  return DateTime.fromISO(dateString, { zone }).toUTC().toJSDate();
+};
 /**
  * ✅ Create Assignment (admin only)
  */
@@ -155,14 +160,17 @@ router.post("/", authMiddleware, roleMiddleware("admin"), async (req, res) => {
       endTime,
     } = req.body;
 
+    const normalizedStart = startTime ? normalizeDate(startTime) : null;
+    const normalizedEnd = endTime ? normalizeDate(endTime) : null;
+
     const newAssignment = new Assignment({
       test,
       colleges,
       batches,
       departments,
       instructions,
-      startTime,
-      endTime,
+      startTime: normalizedStart,
+      endTime: normalizedEnd,
       createdBy: req.user._id,
     });
 
