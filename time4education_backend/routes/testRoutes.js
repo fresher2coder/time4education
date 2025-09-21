@@ -22,35 +22,9 @@ const recalcMaxMarks = async (testId) => {
  * Helper to normalize the date
  */
 import { DateTime } from "luxon";
-const normalizeDate = () => {
+const normalizeDate = (dateString) => {
   const zone = "Asia/Kolkata";
-  const start = DateTime.fromObject(
-    {
-      year: 2025,
-      month: 9,
-      day: 7,
-      hour: 4,
-      minute: 0,
-    },
-    { zone }
-  )
-    .toUTC()
-    .toJSDate();
-
-  const end = DateTime.fromObject(
-    {
-      year: 2025,
-      month: 9,
-      day: 7,
-      hour: 23,
-      minute: 0,
-    },
-    { zone }
-  )
-    .toUTC()
-    .toJSDate();
-
-  // Save start and end in Mongo
+  return DateTime.fromISO(dateString, { zone }).toUTC().toJSDate();
 };
 
 /**
@@ -58,17 +32,27 @@ const normalizeDate = () => {
  */
 router.post("/", authMiddleware, roleMiddleware("admin"), async (req, res) => {
   try {
-    const { title, description, duration, startTime, endTime } = req.body;
-    // const normalizedStart = startTime ? new Date(startTime) : null;
-    // const normalizedEnd = endTime ? new Date(endTime) : null;
-    const newTest = new Test({
+    const {
       title,
       description,
       duration,
       startTime,
       endTime,
+      maxMarks,
+      noOfQuestions,
+    } = req.body;
+    const normalizedStart = startTime ? normalizeDate(startTime) : null;
+    const normalizedEnd = endTime ? normalizeDate(endTime) : null;
+    const newTest = new Test({
+      title,
+      description,
+      duration,
+      startTime: normalizedStart,
+      endTime: normalizedEnd,
       createdBy: req.user.id,
-      maxMarks: 0, // initially no questions linked
+      maxMarks,
+      duration,
+      noOfQuestions,
     });
 
     await newTest.save();
@@ -154,10 +138,6 @@ router.get("/:id", authMiddleware, async (req, res) => {
 /**
  * ✅ Update Test (Admin only)
  */
-
-/**
- * ✅ Update Test (Admin only)
- */
 router.put(
   "/:id",
   authMiddleware,
@@ -168,8 +148,8 @@ router.put(
 
       let updatePayload = { ...rest };
 
-      if (startTime) updatePayload.startTime = new Date(startTime);
-      if (endTime) updatePayload.endTime = new Date(endTime);
+      if (startTime) updatePayload.startTime = normalizeDate(startTime);
+      if (endTime) updatePayload.endTime = normalizeDate(endTime);
       if (questions) updatePayload.questions = questions;
 
       const updatedTest = await Test.findByIdAndUpdate(
