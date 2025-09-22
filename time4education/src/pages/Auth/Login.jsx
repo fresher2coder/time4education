@@ -41,7 +41,7 @@ const Login = () => {
     try {
       const payload = {
         email: form.email.trim(),
-        password: form.password,
+        password: form.password.trim(),
       };
 
       // const res = await axios.post("/auth/login", payload);
