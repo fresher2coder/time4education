@@ -26,9 +26,7 @@ async function importUsersFromCSV(filePath) {
   return new Promise((resolve, reject) => {
     fs.createReadStream(filePath)
       .pipe(csv())
-      .on("data", (row) => {
-        users.push(row);
-      })
+      .on("data", (row) => users.push(row))
       .on("end", () => resolve(users))
       .on("error", reject);
   });
@@ -38,35 +36,52 @@ async function run() {
   await connectDB();
 
   try {
-    const users = await importUsersFromCSV("./users.csv"); // <-- your csv path
+    const users = await importUsersFromCSV("./users.csv"); // <-- path to your CSV
     console.log(`🎉 CSV read complete. Found ${users.length} users.`);
 
     for (const u of users) {
       try {
-        const salt = await bcrypt.genSalt(10);
-        const hashedPassword = await bcrypt.hash(
-          u.password || "default123",
-          salt
-        );
+        // check if user already exists
+        const existingUser = await User.findOne({ email: u.email });
 
-        await User.findOneAndUpdate(
-          { email: u.email },
-          {
-            $set: {
-              name: u.name,
-              rollNo: u.rollNo,
-              email: u.email,
-              password: hashedPassword, // <-- hashed here
-              college: u.college || "all",
-              batch: u.batch || "all",
-              department: u.department || "all",
-              role: "student",
-            },
-          },
-          { upsert: true, new: true }
-        );
+        let hashedPassword;
+        if (u.password) {
+          const salt = await bcrypt.genSalt(10);
+          hashedPassword = await bcrypt.hash(u.password, salt);
+        }
 
-        console.log(`✅ Imported: ${u.email}`);
+        if (existingUser) {
+          // ✅ Update existing user
+          existingUser.name = u.name || existingUser.name;
+          existingUser.rollNo = u.rollNo || existingUser.rollNo;
+          existingUser.college = u.college || existingUser.college || "all";
+          existingUser.batch = u.batch || existingUser.batch || "all";
+          existingUser.department =
+            u.department || existingUser.department || "all";
+
+          if (hashedPassword) {
+            existingUser.password = hashedPassword;
+          }
+
+          await existingUser.save();
+          console.log(`🔄 Updated: ${u.email}`);
+        } else {
+          // ✅ Create new user
+          const salt = await bcrypt.genSalt(10);
+          const newUser = new User({
+            name: u.name,
+            rollNo: u.rollNo,
+            email: u.email,
+            password: hashedPassword || (await bcrypt.hash("default123", salt)),
+            college: u.college || "all",
+            batch: u.batch || "all",
+            department: u.department || "all",
+            role: "student",
+          });
+
+          await newUser.save();
+          console.log(`✅ Created: ${u.email}`);
+        }
       } catch (err) {
         console.error(`❌ Error for ${u.email}:`, err.message);
       }
